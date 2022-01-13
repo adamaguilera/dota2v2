@@ -1,0 +1,8 @@
+"Layer0"
+{
+	"shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"g_tColor"	"materials/overviews/pog3v3_tga_de8a4b5f.vtex"
+	"RepresentativeTextureHeight"	"512"
+	"RepresentativeTextureWidth"	"512"
+}

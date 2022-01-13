@@ -1,0 +1,8 @@
+pog2v2_map
+{
+	material materials/overviews/pog2v2_map.vmat
+	pos_x -4096
+	pos_y 4096
+	scale 8.000
+}
+

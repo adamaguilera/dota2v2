@@ -1,0 +1,6 @@
+
+# dota files
+*.bin
+
+# vscode workspace
+*.code-workspace
