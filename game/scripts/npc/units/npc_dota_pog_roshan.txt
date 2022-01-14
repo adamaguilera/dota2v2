@@ -1,6 +1,6 @@
 "DOTAUnits"
 {
-	"npc_dota_pog_roshan"
+	"npc_dota_roshan"
 	{
 		// General
 		//
@@ -42,9 +42,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"600"		// Experience earn.
-		"BountyGoldMin"				"500"		// Gold earned min.
-		"BountyGoldMax"				"600"		// Gold earned max.
+		"BountyXP"					"800"		// Experience earn.
+		"BountyGoldMin"				"800"		// Gold earned min.
+		"BountyGoldMax"				"1500"		// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------

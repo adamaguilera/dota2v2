@@ -1,9 +1,54 @@
 # DOTA2v2 Patch Notes
 ## Latest Patch
-v1.21: github
-- Added code to github
+v1.3.2: xp / gold / outpost changes
+- Decreased hero kill multiplier to 1.15
+- Decreased creep gold multiplier to 1.32
+- Decreased creep XP multiplier to 1.80
+- Neutral creep XP multiplier now 2.25
+- Outposts are invulnerable for first 5 minutes
+- Outposts now grant 500XP every 5 minutes
+- Decreased cooldown on TP scroll to 50s
+- Decreased travel boots recipe to 1500
+- Increased shrine cooldown to 180s
+- Increased passive XP (40XP for each level behind max every 30s)
+- Increased Roshan bounty to 800 - 1500 (before multiplier)
+- Increased Roshan XP to 800 (before multiplier)
+- Added more ward spots
+- Added new path to top lane jungle for both teams
+- Reduce respawn timer now 65% (previously 82%)
+- Reduced max respawn timer to 60
+- Glyph cd now 240s
 
 ## Previous Patches
+v1.3.1: map bug
+- fixed shrine bug
+
+v1.3: general improvements
+- gameplay improvements
+    - Increased XP multiplier to 2.05
+    - Added passive XP to players with lower level than highest level player (30XP every 15s)
+    - Each outpost now grant 250 XP at the end of every minute
+- map improvements (3v3 / 4v4)
+    - Moved shrine next to first tower
+    - Fixed creeps not aggroing ancient
+    - Fixed shrines not being targetable after destroying tower
+    - Improved player exclusion zone
+    - Roshan respawn now 4 minutes - 6 minutes
+    - added trees to midlane
+- neutral items
+    - removed phoenix ash, mango tree and gem neutral item (while they are bugged)
+    - decreased max tier 1 neutral items to 2
+- Fixes to tome
+    - Initial restock delay to 4 minutes
+    - Restocks every 2 minutes 
+    - Reduced base XP to 400
+    - Increase additional XP per tome use to 300
+    - Price increased to 200
+- Increased penalty time to 5s before random
+
+
+v1.21: github
+- Added code to github
 
 v1.2: roshan / shop fix
 - fixed roshan aggroing forever, will act normally

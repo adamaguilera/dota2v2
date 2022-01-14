@@ -20,11 +20,11 @@ CUSTOM_GAME_SETUP_TIME = 8.0           -- How long should custom game setup last
 BANNING_PHASE_TIME = 20.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
 PRE_GAME_TIME = 60.0                    -- How long after showcase time should the horn blow and the game start?
 HERO_SELECTION_TIME = 40.0
-HERO_SELECTION_PENALTY_TIME = 2.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
+HERO_SELECTION_PENALTY_TIME = 5.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
 UNIVERSAL_SHOP_MODE = false             -- Should the shops contain all items?
 NORMAL_START_GOLD = 700                 -- Starting Gold
-ROSHAN_MINIMUM_RESPAWN = 360
-ROSHAN_MAXIMUM_RESPAWN = 480
+ROSHAN_MINIMUM_RESPAWN = 240
+ROSHAN_MAXIMUM_RESPAWN = 360
 -- END OF DEBUG SETTINGS
 
 
@@ -37,8 +37,8 @@ POG_MAX_PLAYER_COUNT = 10
 POG_SELECTION_PENALTY_PER_TICK = 25
 
 -- respawn timer
-POG_RESPAWN_REDUCTION_PERCENT = 0.82
-POG_MAX_RESPAWN_TIME = 62
+POG_RESPAWN_REDUCTION_PERCENT = 0.65
+POG_MAX_RESPAWN_TIME = 60
 
 -- shared gold
 SHARED_GOLD_PERCENTAGE = 0.80
@@ -54,14 +54,21 @@ POG_4v4_MELEE_ADDITIONAL_SPAWN = 1
 POG_4v4_SIEGE_ADDITIONAL_SPAWN = 1
 
 -- gold / experience multipliers
-POG_HERO_GOLD_MULTIPLIER = 1.32
-POG_NEUTRAL_GOLD_MULTIPLIER = 1.82
-POG_CREEP_GOLD_MULTIPLIER = 1.55
-POG_CREEP_EXPERIENCE_MULTIPLIER = 1.75
+POG_HERO_GOLD_MULTIPLIER = 1.15
+POG_NEUTRAL_GOLD_MULTIPLIER = 1.40
+POG_CREEP_GOLD_MULTIPLIER = 1.30
+POG_CREEP_EXPERIENCE_MULTIPLIER = 1.80
+
+POG_OUTPOST_INVULNERABLE_DURATION = 300
+POG_OUTPOST_EXPERIENCE = 500
+POG_OUTPOST_EXPERIENCE_DELAY = 300
+POG_BEHIND_EXPERIENCE_AMOUNT = 50
+POG_BEHIND_EXPERIENCE_DELAY = 30
+
 
 -- experience scaling
 POG_NEUTRAL_EXPERIENCE_BASE = 15
-POG_NEUTRAL_EXPERIENCE_SCALING = 0.5 -- per minute
+POG_NEUTRAL_EXPERIENCE_SCALING = 1 -- per minute
 POG_DEFICIT_NEUTRAL_EXPERIENCE_ADDITIONAL = 25
 POG_4v4_NEUTRAL_EXPERIENCE_SCALING = 1.40
 
@@ -83,8 +90,8 @@ POG_4v4_COMEBACK_GOLD_MIN_BASE_DIFF = 3300
 
 
 -- scaling variables (team is down a player or it is 4v4 map)
-POG_DEFICIT_GOLD_MULTIPLIER = 1.85
-POG_DEFICIT_EXPERIENCE_MULTIPLIER = 1.41
+POG_DEFICIT_GOLD_MULTIPLIER = 2.0
+POG_DEFICIT_EXPERIENCE_MULTIPLIER = 1.8
 
 -- Debug variables
 POG_DYNAMIC_TEAM_COUNTING = false -- used for debug feature, inefficient code used if enabled
@@ -119,6 +126,9 @@ SHOWCASE_TIME = 0.0                     -- How long should show case time be?
 POST_GAME_TIME = 60.0                   -- How long should we let people stay around before closing the server automatically?
 TREE_REGROW_TIME = 300.0                -- How long should it take individual trees to respawn after being cut down/destroyed?
 
+CUSTOM_SCAN_COOLDOWN = 60              -- Custom cooldown of Scan in seconds. Doesn't affect Scan's starting cooldown!
+CUSTOM_GLYPH_COOLDOWN = 240             -- Custom cooldown of Glyph in seconds. Doesn't affect Glyph's starting cooldown!
+
 --GOLD_PER_TICK = 100                     -- How much gold should players get per tick? DOESN'T WORK
 --GOLD_TICK_TIME = 1.0                    -- How long should we wait in seconds between gold ticks? DOESN'T WORK
 
@@ -135,9 +145,6 @@ CUSTOM_BUYBACK_COST_ENABLED = false     -- Should we use a custom buyback cost s
 CUSTOM_BUYBACK_COOLDOWN_ENABLED = false -- Should we use a custom buyback time?
 CUSTOM_BUYBACK_COOLDOWN_TIME = 480.0    -- Custom buyback cooldown time (needed if CUSTOM_BUYBACK_COOLDOWN_ENABLED is true).
 BUYBACK_FIXED_GOLD_COST = 500           -- Fixed custom buyback gold cost (needed if CUSTOM_BUYBACK_COST_ENABLED is true).
-
-CUSTOM_SCAN_COOLDOWN = 210              -- Custom cooldown of Scan in seconds. Doesn't affect Scan's starting cooldown!
-CUSTOM_GLYPH_COOLDOWN = 300             -- Custom cooldown of Glyph in seconds. Doesn't affect Glyph's starting cooldown!
 
 DISABLE_FOG_OF_WAR_ENTIRELY = false     -- Should we disable fog of war entirely for both teams?
 USE_UNSEEN_FOG_OF_WAR = false           -- Should we make unseen and fogged areas of the map completely black until uncovered by each team? 
