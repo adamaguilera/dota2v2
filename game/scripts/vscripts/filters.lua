@@ -299,7 +299,7 @@ function barebones:GoldFilter(keys)
 	-- 		return false
 	-- 	end
 	-- end
-	keys.gold = barebones:Get_POG_GOLD_WITH_REASON(keys.gold, reason)
+	keys.gold = barebones:Get_POG_GOLD_WITH_REASON(keys.gold, reason, playerID)
 	return true
 end
 

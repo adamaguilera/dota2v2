@@ -4,7 +4,16 @@ function barebones:PogRuneOnUnitKilled (killer_unit, killed_unit)
   if killed_unit:GetUnitName() == "npc_dota_pog_regen_rune" then
     -- do rune effect
     killer_unit:AddNewModifier(killer_unit, nil, "modifier_pog_regen_rune", {duration=POG_RUNE_REGEN_DURATION})
-    killer_unit:EmitSoundParams("Rune.Regen", 1, 0.44, 0)
+    
+    if killer_unit:GetOwnerEntity() ~= nil and killer_unit:GetOwnerEntity():IsPlayer() then
+      DebugPrint("PlayerID then "..killer_unit:GetOwnerEntity():GetPlayerID())
+      EmitSoundOnLocationForPlayer("Rune.Regen", killer_unit:GetAbsOrigin(), killer_unit:GetOwnerEntity():GetPlayerID())
+    else
+      DebugPrint("not a player")
+    end
+
+    -- killer_unit:EmitSoundParams("Rune.Regen", 1, 0.44, 0)
+    -- EmitSoundOnLocationForPlayer()
     -- EmitSoundOnLocationForAllies(killer_unit:GetAbsOrigin(), "Rune.Regen", killer_unit)
   end
 

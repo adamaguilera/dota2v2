@@ -11,6 +11,10 @@ function barebones:OnDisconnect(keys)
 	local reason = keys.reason
 	local userID = keys.userid
 	local playerID = keys.PlayerID
+
+	Timers:CreateTimer(30, function()
+		barebones:SetTeamCounts()
+	end)
 end
 
 -- The overall game state has changed
@@ -138,6 +142,8 @@ function barebones:OnHeroInGame(hero)
 			DebugPrint("[BAREBONES] Bot hero "..hero:GetUnitName().." (re)spawned in the game.")
 			-- Set starting gold for bots
 			hero:SetGold(NORMAL_START_GOLD, false)
+			-- for debugging
+			barebones:SetTeamCounts()
 		else
 			DebugPrint("[BAREBONES] OnHeroInGame running for a non-bot player!")
 			if not PlayerResource.PlayerData[playerID] then

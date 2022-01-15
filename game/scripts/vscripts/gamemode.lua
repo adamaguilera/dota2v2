@@ -213,6 +213,7 @@ function barebones:InitGameMode()
 			barebones:startRunes("bot_rune")
 			barebones:startTeamWaves("lane_mid_goodguys_melee_spawner", "lane_mid_pathcorner_goodguys_2", DOTA_TEAM_GOODGUYS, true)
 			barebones:startTeamWaves("lane_mid_badguys_melee_spawner", "lane_mid_pathcorner_badguys_2", DOTA_TEAM_BADGUYS, false)
+			barebones:SetTeamCounts()
 		end
 
 		
@@ -258,6 +259,7 @@ function barebones:InitGameMode()
 	-- Global Lua Modifiers
 	LinkLuaModifier("modifier_custom_invulnerable", "modifiers/modifier_custom_invulnerable", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_pog_regen_rune", "modifiers/modifier_pog_regen_rune", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_player_deficit", "modifiers/modifier_player_deficit", LUA_MODIFIER_MOTION_NONE)
 
 	print("[BAREBONES] initialized.")
 	DebugPrint("[BAREBONES] Done loading the game mode!\n\n")
@@ -350,7 +352,7 @@ function barebones:startRunes(rune_name)
 		else
 			CreateRune(rune_spawn, RandomInt(0, 6))
 		end
-		return 120.0
+		return POG_RUNE_SPAWN_RATE
 	end)
 end
 

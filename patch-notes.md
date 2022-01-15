@@ -1,5 +1,38 @@
 # DOTA2v2 Patch Notes
+v1.3.4: bug fix
+- added 30s delay to players disconnect
+
+## Future ideas
+- GG feature
+    - On typing GG in all chat, player is permantely stunned and counted as 'disconnected'
+    - A player can type ungg in all chat to remove this effect and 'reconnect'
+    - If all players on a team are GG'd then the game ends in 10s
+- Data logging
+    - Track damage values and recreate post game summary
+- 1v1 map
+
 ## Latest Patch
+v1.3.3: xp changes, player deficit and QOL changes
+- Increased creep XP multiplier to 1.85
+- Increased outpost XP to 600XP
+- Decreased neutral gold multiplier to 1.32
+- Player deficit (less players than other team) now works on player disconnect
+- Player deficit multipliers now dependent on amount of players less team has than other team
+- Player deficit now has a modifier to show players they are getting a buff
+- Shrine initial CD now 120s done
+- Increased roshan bounty to 1000 - 2000
+- Increased roshan XP from 800 -> 1000
+- Decreased roshan respawn range from 240s -> 360s to 220s -> 320s
+- Shared gold nerfed 80% -> 66%
+- Missed gold buffed 12% -> 20%
+- Respawn reduction from 65% -> 72%
+- Glyph CD now 200s
+- Runes spawn every 3 minutes instead of 2
+- POG Runes no longer player global sound
+- Witless shacko now a tier 4 (previously tier 3)
+- Tier 4's now spawn at 16 minutes
+- Tier 5's now spawn at 22 minutes
+
 v1.3.2: xp / gold / outpost changes
 - Decreased hero kill multiplier to 1.15
 - Decreased creep gold multiplier to 1.32

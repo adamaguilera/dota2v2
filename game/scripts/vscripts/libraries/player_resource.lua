@@ -18,6 +18,8 @@ function CDOTA_PlayerResource:OnPlayerConnect(event)
 		self.PlayerData[playerID].has_abandoned_due_to_long_disconnect = false
 		self.PlayerData[playerID].distribute_gold_to_allies = false
     end
+
+	barebones:SetTeamCounts()
 end
 
 -- Verifies if this player ID already has player data assigned to it

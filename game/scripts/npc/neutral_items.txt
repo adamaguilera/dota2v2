@@ -36,7 +36,7 @@
 	{
 		"drop_rates"
 		{
-			"5:00"
+			"5+:00"
 			{
 				"0" "20"
 				"1" "15"
@@ -100,14 +100,13 @@
 			// "item_third_eye"					"1"
 			"item_repair_kit"					"1"
 			"item_tome_of_aghanim"				"1"
-			"item_witless_shako"			"1"
 		}
 	}
 	"4"
 	{	
 		"drop_rates"
 		{
-			"15:00"
+			"16:00"
 			{
 				"0" "20"
 				"1" "15"
@@ -133,13 +132,14 @@
 			"item_stormcrafter"				  "1"
 			// "item_penta_edged_sword"		  "1"
 			"item_fusion_rune"					"1"
+			"item_witless_shako"			"1"
 		}
 	}
 	"5"
 	{
 		"drop_rates"
 		{
-			"20:00"
+			"22:00"
 			{
 				"0" "20"
 				"1" "15"

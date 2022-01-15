@@ -64,14 +64,16 @@ end
 
 function barebones:Get_POG_BOUNTY (bounty, killed_entity)
   local reason = 0
+  local id = nil
   if killed_entity:IsPlayer() then
     reason = DOTA_ModifyGold_HeroKill
+	id = killed_entity:GetPlayerID():GetOwnerEntity():GetPlayerID()
   elseif killed_entity:GetName() == "npc_dota_creep_lane" then
     reason = DOTA_ModifyGold_CreepKill
   elseif killed_entity:GetName() == "npc_dota_creep_neutral" then
     reason = DOTA_ModifyGold_NeutralKill
   end
-  return barebones:Get_POG_GOLD_WITH_REASON(bounty, reason, nil)
+  return barebones:Get_POG_GOLD_WITH_REASON(bounty, reason, id)
 end
 
 function barebones:Get_POG_GOLD_WITH_REASON (gold, reason, playerID)

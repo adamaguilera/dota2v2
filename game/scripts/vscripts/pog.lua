@@ -6,13 +6,34 @@ function barebones:SetTeamCounts()
   TEAM_COUNT = {}
   for id = 0, POG_MAX_PLAYER_COUNT do
     if PlayerResource:IsValidPlayerID(id) then
+      -- DebugPrint("id: "..id.." is valid")
       local team_id = PlayerResource:GetPlayer(id):GetTeamNumber()
+      -- DebugPrint("matching team is "..team_id)
       if TEAM_COUNT[team_id] == nil then
         TEAM_COUNT[team_id] = 0
       end
       TEAM_COUNT[team_id] = TEAM_COUNT[team_id] + 1
+      -- DebugPrint("their team count is now "..TEAM_COUNT[team_id])
       if TEAM_COUNT[team_id] > CURRENT_MAX_TEAM_COUNT then
         CURRENT_MAX_TEAM_COUNT = TEAM_COUNT[team_id]
+        -- DebugPrint("Max team count is now "..CURRENT_MAX_TEAM_COUNT)
+      end
+    end
+  end
+  for id = 0, POG_MAX_PLAYER_COUNT do
+    if PlayerResource:IsValidPlayerID(id) then
+      -- DebugPrint("id: "..id.." is valid")
+      local hero = PlayerResource:GetPlayer(id):GetAssignedHero()
+      if hero ~= nil then
+        -- DebugPrint("hero is not nil")
+        if barebones:PlayerOnDeficitTeam(id) then
+          -- DebugPrint("On Deficit Team")
+          hero:AddNewModifier(hero, nil, "modifier_player_deficit", {})
+          -- DebugPrint("deficit by: "..barebones:DeficitStackCount(id))
+          hero:SetModifierStackCount("modifier_player_deficit", hero, barebones:DeficitStackCount(id))
+        elseif hero:HasModifier("modifier_player_deficit") then
+          hero:RemoveModifierByName("modifier_player_deficit")
+        end
       end
     end
   end
@@ -59,7 +80,17 @@ function barebones:PlayerOnDeficitTeam(player_id)
   if POG_DYNAMIC_CALCULATIONS then
     barebones:SetTeamCounts()
   end
-  return not player_id == nil and PlayerResource:IsValidPlayer(player_id) and barebones:TeamHasDeficit(PlayerResource:GetPlayer(player_id):GetTeamNumber())
+  return player_id ~= nil and PlayerResource:IsValidPlayer(player_id) and barebones:TeamHasDeficit(PlayerResource:GetPlayer(player_id):GetTeamNumber())
+end
+
+function barebones:DeficitStackCount(player_id) 
+  if player_id ~= nil and PlayerResource:IsValidPlayer(player_id) then
+    local team = PlayerResource:GetPlayer(player_id):GetTeamNumber()
+    if TEAM_COUNT[team] ~= nil and TEAM_COUNT[team] < CURRENT_MAX_TEAM_COUNT then
+      return CURRENT_MAX_TEAM_COUNT - TEAM_COUNT[team]
+    end
+  end
+  return 0
 end
 
 -- returns true if team has less players than team with max number of players
@@ -77,7 +108,7 @@ function barebones:onSameTeam(first_id, second_id)
 end
 
 function barebones:OnTeam (player_id, team_id)
-  if player_id == nil or team_id == nill or not PlayerResource:IsValidPlayerID(player_id) then
+  if player_id == nil or team_id == nil or not PlayerResource:IsValidPlayerID(player_id) then
     return false
   end
   return PlayerResource:GetPlayer(player_id):GetTeamNumber() == team_id
@@ -95,7 +126,7 @@ end
 -- POG Variable Getter Functions
 function barebones:Get_POG_HERO_GOLD_MULTIPLIER(player_id)
   local gold_multiplier = POG_HERO_GOLD_MULTIPLIER
-  if barebones:PlayerOnDeficitTeam(player_id) then
+  if player_id ~= nil and barebones:PlayerOnDeficitTeam(player_id) then
     gold_multiplier = gold_multiplier * POG_DEFICIT_GOLD_MULTIPLIER
   end
   return gold_multiplier
@@ -103,8 +134,7 @@ end
 
 function barebones:Get_POG_NEUTRAL_GOLD_MULTIPLIER(player_id)
   local gold_multiplier = POG_NEUTRAL_GOLD_MULTIPLIER
-  if barebones:PlayerOnDeficitTeam(player_id) then
-    DebugPrint("Modifying gold since player is on deficit team")
+  if player_id ~= nil and barebones:PlayerOnDeficitTeam(player_id) then
     gold_multiplier = gold_multiplier * POG_DEFICIT_GOLD_MULTIPLIER
   end
   return gold_multiplier
@@ -112,15 +142,17 @@ end
 
 function barebones:Get_POG_CREEP_GOLD_MULTIPLIER(player_id)
   local gold_multiplier = POG_CREEP_GOLD_MULTIPLIER
-  if barebones:PlayerOnDeficitTeam(player_id) then
+  if player_id ~= nil and barebones:PlayerOnDeficitTeam(player_id) then
+    DebugPrint("gold before: "..gold_multiplier)
     gold_multiplier = gold_multiplier * POG_DEFICIT_GOLD_MULTIPLIER
+    DebugPrint("gold after: "..gold_multiplier)
   end
   return gold_multiplier
 end
 
 function barebones:Get_POG_CREEP_EXPERIENCE_MULTIPLIER(player_id)
   local xp_multipler = POG_CREEP_EXPERIENCE_MULTIPLIER
-  if barebones:PlayerOnDeficitTeam(player_id) then
+  if player_id ~= nil and barebones:PlayerOnDeficitTeam(player_id) then
     xp_multipler = xp_multipler * POG_DEFICIT_EXPERIENCE_MULTIPLIER
   end
   return xp_multipler
