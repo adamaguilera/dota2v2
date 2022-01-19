@@ -1,6 +1,17 @@
 # DOTA2v2 Patch Notes
-v1.3.4: bug fix
-- added 30s delay to players disconnect
+v1.3.5: bug fixes, ward nerfs and skylighter nerfs
+- fixed map minimap render on 2v2 map
+- after ban stage, a random hero choice is periodically banned to help those struggling choose :)
+- observer wards initial stock from 2 to 1
+- observer wards restock time from 135 to 150
+- observer wards duration reduced from 360 to 240
+- sentry wards cost reduced from 50 to 25
+- sentry wards initial stock set to 0
+- sentry ward duration reduced from 420 to 300
+- tome of knowledge cost reduced from 200 to 150
+- reduced cost of TP scroll from 100 to 60
+- increased cost of bots recipe from 1500 to 2000
+- bottle now has 2 MAX charges
 
 ## Future ideas
 - GG feature
@@ -12,6 +23,9 @@ v1.3.4: bug fix
 - 1v1 map
 
 ## Latest Patch
+v1.3.4: bug fix
+- added 30s delay to players disconnect
+
 v1.3.3: xp changes, player deficit and QOL changes
 - Increased creep XP multiplier to 1.85
 - Increased outpost XP to 600XP

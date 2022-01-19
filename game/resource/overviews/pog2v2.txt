@@ -1,8 +1,8 @@
 pog2v2
 {
 	material materials/overviews/pog2v2.vmat
-	pos_x -4096
-	pos_y 4096
-	scale 8.000
+	pos_x -4608
+	pos_y 4608
+	scale 9.000
 }
 

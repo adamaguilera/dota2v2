@@ -371,6 +371,17 @@ function barebones:OnPlayerPickHero(keys)
 	local hero_entity = EntIndexToHScript(keys.heroindex)
 	local player = EntIndexToHScript(keys.player)
 
+	local to_remove = -1
+	for index, id in pairs(POG_HERO_POOL) do
+		if id == keys.heroindex then
+			to_remove = index
+			break
+		end
+	end
+	if to_remove ~= -1 then
+		POG_HERO_POOL[to_remove] = nil
+	end
+
 	Timers:CreateTimer(0.5, function()
 		local playerID = hero_entity:GetPlayerID() -- or player:GetPlayerID() if player is not disconnected
 		if PlayerResource:IsFakeClient(playerID) then

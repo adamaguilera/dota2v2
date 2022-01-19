@@ -30,6 +30,10 @@ ROSHAN_MAXIMUM_RESPAWN = 360
 
 
 -- Pog Settings
+POG_HERO_POOL = {}
+POG_HERO_SELECTED = {}
+POG_MAX_ADDITIONAL_BANS = 12
+POG_ADDITIONAL_BAN_FREQUENCY = 2
 
 -- hero selection
 DOTA_MAX_HERO_COUNT = 136 -- not actually max hero count but marci has > id than actual count

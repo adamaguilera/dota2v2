@@ -43,6 +43,9 @@ function barebones:PostLoadPrecache()
 	--PrecacheUnitByNameAsync("npc_dota_hero_enigma", function(...) end)
 end
 
+
+-- global POST pick phase ban
+
 --[[
   This function is called once and only once after all players have loaded into the game, right as the hero selection time begins.
   It can be used to initialize non-hero player state or adjust the hero selection (i.e. force random etc)
@@ -56,20 +59,25 @@ function barebones:OnAllPlayersLoaded()
   -- clear blacklist
   GameRules:ClearHeroBlacklist()
   GameRules:SetHideBlacklistedHeroes(true)
-
-  -- generate list of all hero id's
-  local heroList = {}
-  for i = 1, DOTA_MAX_HERO_COUNT do
-	heroList[i] = i
-  end
-
-  -- randomly shuffle list
-  local toBan = barebones:shuffle(heroList)
-
-  -- pull heroes from random list you want banned
-  for index = 1, POG_BAN_COUNT do
-	GameRules:AddHeroIDToBlacklist(toBan[index])
-  end
+  -- generate list of all hero id's that aren't banned
+  	local heroList = {}
+  	for i = 1, DOTA_MAX_HERO_COUNT do
+		heroList[i] = i
+	end
+	-- randomly shuffle list
+	local toBan = barebones:shuffle(heroList)
+	-- pull heroes from random list you want banned
+	for index = 1, POG_BAN_COUNT do
+		GameRules:AddHeroIDToBlacklist(toBan[index])
+	end	
+	-- set the rest of the heroes to the remaining pool
+	local i = 0
+	POG_HERO_POOL = {}
+	for index = POG_BAN_COUNT, DOTA_MAX_HERO_COUNT do
+		POG_HERO_POOL[i] = toBan[index]
+		i = i + 1
+	end
+	-- this will be used later
   
   -- Force Random a hero for every player that didnt pick a hero when time runs out
   local delay = HERO_SELECTION_TIME + HERO_SELECTION_PENALTY_TIME + STRATEGY_TIME - 0.1
@@ -201,6 +209,27 @@ function barebones:InitGameMode()
 	ListenToGameEvent("game_rules_state_change", function(self)
 		local state = GameRules:State_Get()
 	
+		if state == DOTA_GAMERULES_STATE_HERO_SELECTION then
+			local index = 0
+			local bans = 0
+			Timers:CreateTimer(20, function()
+				if POG_HERO_POOL[index] == nil then
+					index = index + 1
+					return POG_ADDITIONAL_BAN_FREQUENCY
+				end
+				if index >= 20 then
+					return
+				end
+				GameRules:AddHeroIDToBlacklist(POG_HERO_POOL[index])
+				bans = bans + 1
+				index = index + 1
+				if bans < POG_MAX_ADDITIONAL_BANS then
+					return POG_ADDITIONAL_BAN_FREQUENCY
+				end
+				return
+			end)
+		end
+
 		if state == DOTA_GAMERULES_STATE_PRE_GAME then
 			-- pog map setup
 			barebones:setup_map()

@@ -3,6 +3,9 @@
 #base "items/item_tome_of_knowledge.txt"
 #base "items/item_recipe_travel_boots.txt"
 #base "items/item_tpscroll.txt"
+#base "items/item_ward_observer.txt"
+#base "items/item_ward_sentry.txt"
+#base "items/item_bottle.txt"
 
 "DOTAAbilities"
 {
