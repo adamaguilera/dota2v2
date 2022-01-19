@@ -1,4 +1,19 @@
 # DOTA2v2 Patch Notes
+v1.3.6: bug fixes, tome changes
+- fixed neutral items past tier 1 not spawning
+- tome of knowledge base XP increased from 400 to 600
+- tome of knowledge now buyable at 4 minutes (previously 2m)
+
+## Future ideas
+- GG feature
+    - On typing GG in all chat, player is permantely stunned and counted as 'disconnected'
+    - A player can type ungg in all chat to remove this effect and 'reconnect'
+    - If all players on a team are GG'd then the game ends in 10s
+- Data logging
+    - Track damage values and recreate post game summary
+- 1v1 map
+
+## Previous Patches
 v1.3.5: bug fixes, ward nerfs and skylighter nerfs
 - fixed map minimap render on 2v2 map
 - after ban stage, a random hero choice is periodically banned to help those struggling choose :)
@@ -13,16 +28,6 @@ v1.3.5: bug fixes, ward nerfs and skylighter nerfs
 - increased cost of bots recipe from 1500 to 2000
 - bottle now has 2 MAX charges
 
-## Future ideas
-- GG feature
-    - On typing GG in all chat, player is permantely stunned and counted as 'disconnected'
-    - A player can type ungg in all chat to remove this effect and 'reconnect'
-    - If all players on a team are GG'd then the game ends in 10s
-- Data logging
-    - Track damage values and recreate post game summary
-- 1v1 map
-
-## Latest Patch
 v1.3.4: bug fix
 - added 30s delay to players disconnect
 

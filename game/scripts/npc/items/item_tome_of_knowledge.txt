@@ -25,7 +25,7 @@
     "ItemStockMax"                                        "3"
     "ItemStockInitial"                                    "0"
     "ItemStockTime"                                       "240" (4 minutes)
-    "ItemInitialStockTime"                                "120" (2 minutes)
+    "ItemInitialStockTime"                                "240" (4 minutes)
     "BonusDelayedStockCount"                              "0"
     "ItemDeclarations"                                    "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
     "ItemSupport"                                         "1"
@@ -38,7 +38,7 @@
       "01"
       {
         "var_type"				"FIELD_INTEGER"
-        "xp_bonus"				"400"
+        "xp_bonus"				"600"
       }
       "02" // Bonus experience gained per previous tome starts with the third used tome, not with the second
       {
