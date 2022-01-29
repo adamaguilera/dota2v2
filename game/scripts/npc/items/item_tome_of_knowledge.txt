@@ -24,7 +24,7 @@
     "ItemDisplayCharges"                                  "1"
     "ItemStockMax"                                        "3"
     "ItemStockInitial"                                    "0"
-    "ItemStockTime"                                       "240" (4 minutes)
+    "ItemStockTime"                                       "300" (4 minutes + 60 for pre start)
     "ItemInitialStockTime"                                "240" (4 minutes)
     "BonusDelayedStockCount"                              "0"
     "ItemDeclarations"                                    "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"

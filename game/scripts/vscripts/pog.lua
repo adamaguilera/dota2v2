@@ -5,7 +5,8 @@ function barebones:SetTeamCounts()
   CURRENT_MAX_TEAM_COUNT = 0
   TEAM_COUNT = {}
   for id = 0, POG_MAX_PLAYER_COUNT do
-    if PlayerResource:IsValidPlayerID(id) then
+    DebugPrint("Checking playerID: "..id..", connection state: "..PlayerResource:GetConnectionState(id))
+    if PlayerResource:IsValidPlayerID(id) and PlayerResource:GetConnectionState(id) == DOTA_CONNECTION_STATE_CONNECTED then
       -- DebugPrint("id: "..id.." is valid")
       local team_id = PlayerResource:GetPlayer(id):GetTeamNumber()
       -- DebugPrint("matching team is "..team_id)

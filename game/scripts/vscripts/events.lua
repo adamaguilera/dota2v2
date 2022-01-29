@@ -12,7 +12,7 @@ function barebones:OnDisconnect(keys)
 	local userID = keys.userid
 	local playerID = keys.PlayerID
 
-	Timers:CreateTimer(30, function()
+	Timers:CreateTimer(20, function()
 		barebones:SetTeamCounts()
 	end)
 end
@@ -504,6 +504,9 @@ function barebones:OnEntityKilled(keys)
 			else
 				-- Get dota default respawn time
 				respawn_time = math.min(math.floor(killed_unit:GetRespawnTime() * POG_RESPAWN_REDUCTION_PERCENT), POG_MAX_RESPAWN_TIME)
+				if barebones:PlayerOnDeficitTeam(killed_unit:GetPlayerID()) then
+					respawn_time = math.floor(killed_unit:GetRespawnTime() * POG_DEFICIT_RESPAWN_REDUCTION_PERCENT)
+				end
 			end
 
 			-- Fixing respawn time after level 30, this is usually bugged in custom games if default respawn times are used -> respawn time are either too long or too short. We fix that.
@@ -555,7 +558,11 @@ function barebones:OnEntityKilled(keys)
 
 		-- Hero Buyback Cooldown
 		if CUSTOM_BUYBACK_COOLDOWN_ENABLED then
-			PlayerResource:SetCustomBuybackCooldown(killed_unit:GetPlayerID(), CUSTOM_BUYBACK_COOLDOWN_TIME)
+			if barebones:PlayerOnDeficitTeam(killed_unit:GetPlayerID()) then
+				PlayerResource:SetCustomBuybackCooldown(killed_unit:GetPlayerID(), POG_DEFICIT_BUYBACK_COOLDOWN)
+			else
+				PlayerResource:SetCustomBuybackCooldown(killed_unit:GetPlayerID(), CUSTOM_BUYBACK_COOLDOWN_TIME)
+			end
 		end
 
 		-- Hero Buyback Gold Cost, you can replace BUYBACK_FIXED_GOLD_COST with your formula

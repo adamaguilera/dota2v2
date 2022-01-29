@@ -32,7 +32,7 @@ ROSHAN_MAXIMUM_RESPAWN = 360
 -- Pog Settings
 POG_HERO_POOL = {}
 POG_HERO_SELECTED = {}
-POG_MAX_ADDITIONAL_BANS = 12
+POG_MAX_ADDITIONAL_BANS = 14
 POG_ADDITIONAL_BAN_FREQUENCY = 2
 
 -- hero selection
@@ -83,8 +83,8 @@ POG_CREEP_DAMAGE_SCALING = 2
 POG_CREEP_HEALTH_SCALING = 24
 POG_4v4_CREEP_DAMAGE_SCALING_ADD = 1.45
 POG_4v4_CREEP_HEALTH_SCALING_ADD = 18
-POG_DEFICIT_CREEP_DAMAGE_SCALING_ADD = 1.45
-POG_DEFICIT_CREEP_HEALTH_SCALING_ADD = 20
+POG_DEFICIT_CREEP_DAMAGE_SCALING_ADD = 1.5
+POG_DEFICIT_CREEP_HEALTH_SCALING_ADD = 22
 
 -- comeback mechanic, TO DO maybe?
 POG_COMEBACK_ENABLED = false
@@ -96,8 +96,10 @@ POG_4v4_COMEBACK_GOLD_MIN_BASE_DIFF = 3300
 
 
 -- scaling variables (team is down a player or it is 4v4 map)
-POG_DEFICIT_GOLD_MULTIPLIER = 1.5
-POG_DEFICIT_EXPERIENCE_MULTIPLIER = 1.5
+POG_DEFICIT_GOLD_MULTIPLIER = 1.40
+POG_DEFICIT_EXPERIENCE_MULTIPLIER = 1.80
+POG_DEFICIT_RESPAWN_REDUCTION_PERCENT = 0.30
+POG_DEFICIT_BUYBACK_COOLDOWN = 60
 
 -- Debug variables
 POG_DYNAMIC_TEAM_COUNTING = false -- used for debug feature, inefficient code used if enabled
@@ -119,8 +121,8 @@ POG_RUNE_REGEN_MANA_PCT = 3.2 -- %
 
 -- Rune modifiers
 POG_BOUNTY_RUNE_BASE = 120
-POG_BOUNTY_RUNE_SCALING = 0.2
-POG_DEFICIT_BOUNTY_MULTIPLIER = 1.75
+POG_BOUNTY_RUNE_SCALING = 0.25
+POG_DEFICIT_BOUNTY_MULTIPLIER = 2.0
 
 -- END OF POG SETTINGS
 
@@ -150,7 +152,7 @@ MINIMAP_RUNE_ICON_SIZE = 1              -- What icon size should we use for rune
 BUYBACK_ENABLED = true                  -- Should we allow players to buyback when they die?
 CUSTOM_BUYBACK_COST_ENABLED = false     -- Should we use a custom buyback cost setting?
 CUSTOM_BUYBACK_COOLDOWN_ENABLED = false -- Should we use a custom buyback time?
-CUSTOM_BUYBACK_COOLDOWN_TIME = 480.0    -- Custom buyback cooldown time (needed if CUSTOM_BUYBACK_COOLDOWN_ENABLED is true).
+CUSTOM_BUYBACK_COOLDOWN_TIME = 300.0    -- Custom buyback cooldown time (needed if CUSTOM_BUYBACK_COOLDOWN_ENABLED is true).
 BUYBACK_FIXED_GOLD_COST = 500           -- Fixed custom buyback gold cost (needed if CUSTOM_BUYBACK_COST_ENABLED is true).
 
 DISABLE_FOG_OF_WAR_ENTIRELY = false     -- Should we disable fog of war entirely for both teams?

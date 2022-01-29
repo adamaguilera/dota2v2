@@ -1,8 +1,13 @@
 # DOTA2v2 Patch Notes
-v1.3.6: bug fixes, tome changes
-- fixed neutral items past tier 1 not spawning
-- tome of knowledge base XP increased from 400 to 600
-- tome of knowledge now buyable at 4 minutes (previously 2m)
+v1.3.7: bottle / deficit changes
+- increased max bottle charges back to 3
+- added 2 additional random bans over time
+- fixed issue with player disconnect not causing modifier to show up
+- increaesed deficit creep damage scaling from 1.45 to 1.5
+- increased deficit creep health scaling from 20 to 22 
+- decreased respawn timer for deficit team by 70%
+- deficit gold multiplier reduced from 1.5 to 1.4 (addon description was inaccurate lul)
+- deficit experience multiplier increased from 1.5 to 1.8
 
 ## Future ideas
 - GG feature
@@ -14,6 +19,11 @@ v1.3.6: bug fixes, tome changes
 - 1v1 map
 
 ## Previous Patches
+v1.3.6: bug fixes, tome changes
+- fixed neutral items past tier 1 not spawning
+- tome of knowledge base XP increased from 400 to 600
+- tome of knowledge now buyable at 4 minutes (previously 2m)
+
 v1.3.5: bug fixes, ward nerfs and skylighter nerfs
 - fixed map minimap render on 2v2 map
 - after ban stage, a random hero choice is periodically banned to help those struggling choose :)
