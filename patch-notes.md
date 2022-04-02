@@ -1,4 +1,17 @@
 # DOTA2v2 Patch Notes
+v1.4.1: bug fix
+- fixed bug where debug settings was enabled
+
+## Future ideas
+- GG feature
+    - On typing GG in all chat, player is permantely stunned and counted as 'disconnected'
+    - A player can type ungg in all chat to remove this effect and 'reconnect'
+    - If all players on a team are GG'd then the game ends in 10s
+- Data logging
+    - Track damage values and recreate post game summary
+- 1v1 map
+
+## Previous Patches
 v1.4: primal beast update
 - Added primal beast, the hero will always appear in select screen
 - changed AA name back to AA
@@ -13,16 +26,7 @@ v1.4: primal beast update
 - increased neutral creep xp multiplier from 15 -> 18
 - increased neutral creep xp scaling from 1 -> 2
 
-## Future ideas
-- GG feature
-    - On typing GG in all chat, player is permantely stunned and counted as 'disconnected'
-    - A player can type ungg in all chat to remove this effect and 'reconnect'
-    - If all players on a team are GG'd then the game ends in 10s
-- Data logging
-    - Track damage values and recreate post game summary
-- 1v1 map
 
-## Previous Patches
 v1.3.7: bottle / deficit changes
 - increased max bottle charges back to 3
 - added 2 additional random bans over time
