@@ -29,7 +29,7 @@
 		"ItemInitialCharges"			"1"
 		"ItemStockMax"					"10"
 		"ItemStockInitial"				"0"
-		"ItemStockTime"					"70"
+		"ItemStockTime"					"120"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 		"ItemSupport"					"1"
 		"IsTempestDoubleClonable"		"0"

@@ -434,6 +434,7 @@ function barebones:OnEntityKilled(keys)
     if inflictor_index then
       killing_ability = EntIndexToHScript(inflictor_index)
     end
+	
 
     -- For Meepo clones, find the original
     if killed_unit:IsClone() then
@@ -452,17 +453,20 @@ function barebones:OnEntityKilled(keys)
 	DebugPrint("Killed team"..killed_teamID.." | "..killer_teamID.." killer team")
 
 	-- share gold
-	for id = 0, POG_MAX_PLAYER_COUNT do
-		if barebones:OnTeam(id, killer_teamID) then
-			local shareAmount = 0
-			if barebones:shouldShareGold(killer_owner, id) then
-				shareAmount = math.floor(barebones:Get_POG_BOUNTY(killed_unit:GetGoldBounty(), killed_unit) * SHARED_GOLD_PERCENTAGE)
-				DebugPrint("Granting "..shareAmount.." as shared last hit gold to "..id)
-			elseif barebones:shouldShareMissedGold(killer_unit, id) then
-				shareAmount =  math.floor(barebones:Get_POG_BOUNTY(killed_unit:GetGoldBounty(), killed_unit) * SHARED_MISSED_GOLD_PERCENTAGE)
-				DebugPrint("Granting "..shareAmount.." as shared missed gold to "..id)
+	if killing_ability == nil or (killing_ability ~= nil and killing_ability:GetAbilityName() ~= "item_hand_of_midas") then
+		DebugPrint("Will share gold")
+		for id = 0, POG_MAX_PLAYER_COUNT do
+			if barebones:OnTeam(id, killer_teamID) then
+				local shareAmount = 0
+				if barebones:shouldShareGold(killer_owner, id) then
+					shareAmount = math.floor(barebones:Get_POG_BOUNTY(killed_unit:GetGoldBounty(), killed_unit) * SHARED_GOLD_PERCENTAGE)
+					DebugPrint("Granting "..shareAmount.." as shared last hit gold to "..id)
+				elseif barebones:shouldShareMissedGold(killer_unit, id) then
+					shareAmount =  math.floor(barebones:Get_POG_BOUNTY(killed_unit:GetGoldBounty(), killed_unit) * SHARED_MISSED_GOLD_PERCENTAGE)
+					DebugPrint("Granting "..shareAmount.." as shared missed gold to "..id)
+				end
+				PlayerResource:ModifyGold(id, shareAmount, false, DOTA_ModifyGold_SharedGold)
 			end
-			PlayerResource:ModifyGold(id, shareAmount, false, DOTA_ModifyGold_SharedGold)
 		end
 	end
 	-- do pog rune

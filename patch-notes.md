@@ -1,13 +1,17 @@
 # DOTA2v2 Patch Notes
-v1.3.7: bottle / deficit changes
-- increased max bottle charges back to 3
-- added 2 additional random bans over time
-- fixed issue with player disconnect not causing modifier to show up
-- increaesed deficit creep damage scaling from 1.45 to 1.5
-- increased deficit creep health scaling from 20 to 22 
-- decreased respawn timer for deficit team by 70%
-- deficit gold multiplier reduced from 1.5 to 1.4 (addon description was inaccurate lul)
-- deficit experience multiplier increased from 1.5 to 1.8
+v1.4: primal beast update
+- Added primal beast, the hero will always appear in select screen
+- changed AA name back to AA
+- changed observer ward stock time from 150s -> 300s
+- observer max stock 4 -> 2
+- sentry stock time from 70s -> 120s
+- midas no longer shares gold
+- pog creep health scaling decreased from 24 -> 20
+- pog 4v4 health scaling decreased from 18 -> 15
+- pog run heal base increased from 40 -> 50
+- increase neutral creep gold multiplier from 1.32 -> 1.5
+- increased neutral creep xp multiplier from 15 -> 18
+- increased neutral creep xp scaling from 1 -> 2
 
 ## Future ideas
 - GG feature
@@ -19,6 +23,16 @@ v1.3.7: bottle / deficit changes
 - 1v1 map
 
 ## Previous Patches
+v1.3.7: bottle / deficit changes
+- increased max bottle charges back to 3
+- added 2 additional random bans over time
+- fixed issue with player disconnect not causing modifier to show up
+- increased deficit creep damage scaling from 1.45 to 1.5
+- increased deficit creep health scaling from 20 to 22 
+- decreased respawn timer for deficit team by 70%
+- deficit gold multiplier reduced from 1.5 to 1.4 (addon description was inaccurate lul)
+- deficit experience multiplier increased from 1.5 to 1.8
+
 v1.3.6: bug fixes, tome changes
 - fixed neutral items past tier 1 not spawning
 - tome of knowledge base XP increased from 400 to 600

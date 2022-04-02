@@ -1,30 +1,30 @@
 -- In this file you can set up all the properties and settings for your game mode.
 
 -- TESTING SETTINGS
--- USE_DEBUG = true                       -- Should we print statements on almost every function/event call? For debugging.
--- ENABLE_BANNING_PHASE = false             -- Should we enable banning phase? Set to true if "EnablePickRules" is "1" in 'addoninfo.txt'
--- CUSTOM_GAME_SETUP_TIME = 3.0           -- How long should custom game setup last - the screen where players pick a team?
--- BANNING_PHASE_TIME = 0.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
--- PRE_GAME_TIME = 15.0                    -- How long after showcase time should the horn blow and the game start?
--- HERO_SELECTION_TIME = 1.0
--- HERO_SELECTION_PENALTY_TIME = 0.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
--- UNIVERSAL_SHOP_MODE = false             -- Should the shops contain all items?
--- NORMAL_START_GOLD = 10000                 -- Starting Gold
--- ROSHAN_MINIMUM_RESPAWN = 15
--- ROSHAN_MAXIMUM_RESPAWN = 20
+USE_DEBUG = true                       -- Should we print statements on almost every function/event call? For debugging.
+ENABLE_BANNING_PHASE = false             -- Should we enable banning phase? Set to true if "EnablePickRules" is "1" in 'addoninfo.txt'
+CUSTOM_GAME_SETUP_TIME = 3.0           -- How long should custom game setup last - the screen where players pick a team?
+BANNING_PHASE_TIME = 0.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
+PRE_GAME_TIME = 15.0                    -- How long after showcase time should the horn blow and the game start?
+HERO_SELECTION_TIME = 51.0
+HERO_SELECTION_PENALTY_TIME = 0.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
+UNIVERSAL_SHOP_MODE = false             -- Should the shops contain all items?
+NORMAL_START_GOLD = 10000                 -- Starting Gold
+ROSHAN_MINIMUM_RESPAWN = 15
+ROSHAN_MAXIMUM_RESPAWN = 20
 
 -- OFFICIAL SETTINGS
-USE_DEBUG = false                       -- Should we print statements on almost every function/event call? For debugging.
-ENABLE_BANNING_PHASE = true             -- Should we enable banning phase? Set to true if "EnablePickRules" is "1" in 'addoninfo.txt'
-CUSTOM_GAME_SETUP_TIME = 8.0           -- How long should custom game setup last - the screen where players pick a team?
-BANNING_PHASE_TIME = 20.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
-PRE_GAME_TIME = 60.0                    -- How long after showcase time should the horn blow and the game start?
-HERO_SELECTION_TIME = 40.0
-HERO_SELECTION_PENALTY_TIME = 5.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
-UNIVERSAL_SHOP_MODE = false             -- Should the shops contain all items?
-NORMAL_START_GOLD = 700                 -- Starting Gold
-ROSHAN_MINIMUM_RESPAWN = 240
-ROSHAN_MAXIMUM_RESPAWN = 360
+-- USE_DEBUG = false                       -- Should we print statements on almost every function/event call? For debugging.
+-- ENABLE_BANNING_PHASE = true             -- Should we enable banning phase? Set to true if "EnablePickRules" is "1" in 'addoninfo.txt'
+-- CUSTOM_GAME_SETUP_TIME = 8.0           -- How long should custom game setup last - the screen where players pick a team?
+-- BANNING_PHASE_TIME = 20.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
+-- PRE_GAME_TIME = 60.0                    -- How long after showcase time should the horn blow and the game start?
+-- HERO_SELECTION_TIME = 40.0
+-- HERO_SELECTION_PENALTY_TIME = 5.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
+-- UNIVERSAL_SHOP_MODE = false             -- Should the shops contain all items?
+-- NORMAL_START_GOLD = 700                 -- Starting Gold
+-- ROSHAN_MINIMUM_RESPAWN = 240
+-- ROSHAN_MAXIMUM_RESPAWN = 360
 
 -- END OF TESTING SETTINGS
 
@@ -36,7 +36,7 @@ POG_MAX_ADDITIONAL_BANS = 14
 POG_ADDITIONAL_BAN_FREQUENCY = 2
 
 -- hero selection
-DOTA_MAX_HERO_COUNT = 136 -- not actually max hero count but marci has > id than actual count
+DOTA_MAX_HERO_COUNT = 136
 POG_BAN_COUNT = 100
 POG_MAX_PLAYER_COUNT = 10
 POG_SELECTION_PENALTY_PER_TICK = 25
@@ -60,7 +60,7 @@ POG_4v4_SIEGE_ADDITIONAL_SPAWN = 1
 
 -- gold / experience multipliers
 POG_HERO_GOLD_MULTIPLIER = 1.15
-POG_NEUTRAL_GOLD_MULTIPLIER = 1.32
+POG_NEUTRAL_GOLD_MULTIPLIER = 1.5
 POG_CREEP_GOLD_MULTIPLIER = 1.30
 POG_CREEP_EXPERIENCE_MULTIPLIER = 1.85
 
@@ -73,16 +73,16 @@ POG_SHRINE_INITIAL_CD = 120
 
 
 -- experience scaling
-POG_NEUTRAL_EXPERIENCE_BASE = 15
-POG_NEUTRAL_EXPERIENCE_SCALING = 1 -- per minute
+POG_NEUTRAL_EXPERIENCE_BASE = 18
+POG_NEUTRAL_EXPERIENCE_SCALING = 2 -- per minute
 POG_DEFICIT_NEUTRAL_EXPERIENCE_ADDITIONAL = 25
 POG_4v4_NEUTRAL_EXPERIENCE_SCALING = 1.40
 
 -- creep scaling
 POG_CREEP_DAMAGE_SCALING = 2
-POG_CREEP_HEALTH_SCALING = 24
+POG_CREEP_HEALTH_SCALING = 20
 POG_4v4_CREEP_DAMAGE_SCALING_ADD = 1.45
-POG_4v4_CREEP_HEALTH_SCALING_ADD = 18
+POG_4v4_CREEP_HEALTH_SCALING_ADD = 15
 POG_DEFICIT_CREEP_DAMAGE_SCALING_ADD = 1.5
 POG_DEFICIT_CREEP_HEALTH_SCALING_ADD = 22
 
@@ -114,7 +114,7 @@ LANE_CREEP_RUNE_DROP_CHANCE = 10
 -- Regen rune
 POG_RUNE_REGEN_MAX_STACKS = 5
 POG_RUNE_REGEN_DURATION = 4
-POG_RUNE_REGEN_HEAL_BASE = 40
+POG_RUNE_REGEN_HEAL_BASE = 50
 POG_RUNE_REGEN_HEAL_PCT = 4.2 -- %
 POG_RUNE_REGEN_MANA_BASE = 24
 POG_RUNE_REGEN_MANA_PCT = 3.2 -- %
