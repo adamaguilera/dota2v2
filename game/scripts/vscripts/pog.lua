@@ -1,3 +1,4 @@
+require('util')
 TEAM_COUNT = {}
 CURRENT_MAX_TEAM_COUNT = 0
 -- Sets team count so we can easily get how many players are on team X
@@ -123,6 +124,63 @@ function barebones:Is2v2()
   return GetMapName() == 'pog2v2'
 end
 
+-- POG GG Feature
+TEAM_GG = {}
+PLAYER_GG = {}
+-- TEAM_GG = {1: 1, 2: 4}
+function barebones:printGG()
+  for team_id, gg_count in pairs(TEAM_GG) do
+    DebugPrint("team: "..team_id.." has "..gg_count)
+  end
+end
+
+function barebones:OnGG (player_id)
+  local team_id = PlayerResource:GetPlayer(player_id):GetTeamNumber()
+  DebugPrint("Before: ")
+  barebones:printGG()
+  if TEAM_GG[team_id] == nil then
+    DebugPrint("First player to type GG")
+    TEAM_GG[team_id] = 1
+    PLAYER_GG[player_id] = true
+  elseif PLAYER_GG[player_id] then
+    DebugPrint("UN GGing")
+    TEAM_GG[team_id] = TEAM_GG[team_id] - 1
+    PLAYER_GG[player_id] = false
+  else
+    DebugPrint("Hasn't GGd but teammate has")
+    TEAM_GG[team_id] = TEAM_GG[team_id] + 1
+    PLAYER_GG[player_id] = true
+  end
+  DebugPrint("After: ")
+  barebones:printGG()
+  barebones:CheckGG(TEAM_GG)
+end
+
+function barebones:CheckGG(t)
+  local losing_team = -1
+  for team, ggs in pairs(t) do
+    DebugPrint("teamcount: "..TEAM_COUNT[team])
+    DebugPrint("ggs: "..ggs)
+    if TEAM_COUNT[team] ~= nil and TEAM_COUNT[team] <= ggs then
+        DebugPrint("Ending")
+        if team == 2 then
+          GameRules:SetGameWinner(1)
+          Entities:FindByName(nil, "dota_goodguys_fort"):SetInvulnCount(0)
+          Entities:FindByName(nil, "dota_goodguys_fort"):ForceKill(false)
+        else
+          GameRules:SetGameWinner(2)
+          Entities:FindByName(nil, "dota_badguys_fort"):SetInvulnCount(0)
+          Entities:FindByName(nil, "dota_badguys_fort"):ForceKill(false)
+        end
+    end
+  end
+  DebugPrint("Losing team: "..losing_team)
+  for team, ggs in pairs(t) do
+    if losing_team ~= -1 and team ~= losing_team then
+      GameRules:SetGameWinner(team)
+    end
+  end
+end
 
 -- POG Variable Getter Functions
 function barebones:Get_POG_HERO_GOLD_MULTIPLIER(player_id)

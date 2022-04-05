@@ -1,6 +1,6 @@
 -- This file contains all barebones-registered events and has already set up the passed-in parameters for you to use.
 -- You should comment or remove the stuff you don't need!
-
+require('pog')
 -- Handle stuff when a player disconnects
 function barebones:OnDisconnect(keys)
 	DebugPrint("[BAREBONES] A Player has disconnected ".. tostring(keys.userid))
@@ -453,7 +453,7 @@ function barebones:OnEntityKilled(keys)
 	DebugPrint("Killed team"..killed_teamID.." | "..killer_teamID.." killer team")
 
 	-- share gold
-	if killing_ability == nil or (killing_ability ~= nil and killing_ability:GetAbilityName() ~= "item_hand_of_midas") then
+	if killing_ability == nil or (killing_ability:GetName() ~= "item_hand_of_midas") then
 		DebugPrint("Will share gold")
 		for id = 0, POG_MAX_PLAYER_COUNT do
 			if barebones:OnTeam(id, killer_teamID) then
@@ -697,6 +697,10 @@ function barebones:OnPlayerChat(keys)
 	local userID = keys.userid
 	local playerID = keys.playerid
 	local text = keys.text
+
+	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS and text == 'gg' then
+		barebones:OnGG(playerID)
+	end
 end
 
 function barebones:dropRune(location, type)

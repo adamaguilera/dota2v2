@@ -1,12 +1,14 @@
 -- In this file you can set up all the properties and settings for your game mode.
+-- pog_map.lua
+require('pog_map')
 
 -- TESTING SETTINGS
 -- USE_DEBUG = true                       -- Should we print statements on almost every function/event call? For debugging.
 -- ENABLE_BANNING_PHASE = false             -- Should we enable banning phase? Set to true if "EnablePickRules" is "1" in 'addoninfo.txt'
 -- CUSTOM_GAME_SETUP_TIME = 3.0           -- How long should custom game setup last - the screen where players pick a team?
 -- BANNING_PHASE_TIME = 0.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
--- PRE_GAME_TIME = 15.0                    -- How long after showcase time should the horn blow and the game start?
--- HERO_SELECTION_TIME = 51.0
+-- PRE_GAME_TIME = 3.0                    -- How long after showcase time should the horn blow and the game start?
+-- HERO_SELECTION_TIME = 1.0
 -- HERO_SELECTION_PENALTY_TIME = 0.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
 -- UNIVERSAL_SHOP_MODE = false             -- Should the shops contain all items?
 -- NORMAL_START_GOLD = 10000                 -- Starting Gold
@@ -36,7 +38,7 @@ POG_MAX_ADDITIONAL_BANS = 14
 POG_ADDITIONAL_BAN_FREQUENCY = 2
 
 -- hero selection
-DOTA_MAX_HERO_COUNT = 136
+DOTA_MAX_HERO_COUNT = 137
 POG_BAN_COUNT = 100
 POG_MAX_PLAYER_COUNT = 10
 POG_SELECTION_PENALTY_PER_TICK = 25
@@ -285,8 +287,8 @@ TEAM_COLORS[DOTA_TEAM_CUSTOM_8] = { 140, 42, 244 }  --    Purple
 USE_AUTOMATIC_PLAYERS_PER_TEAM = true   -- Should we set the number of players to 10 / MAX_NUMBER_OF_TEAMS?
 
 CUSTOM_TEAM_PLAYER_COUNT = {}           -- If we're not automatically setting the number of players per team, use this table
-CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 5 -- you need to set this for each map if maps have a different max number of players per team
-CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS]  = 5 -- you need to set this for each map if maps have a different max number of players
+CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = barebones:GetMaxTeamSize() -- you need to set this for each map if maps have a different max number of players per team
+CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS]  = barebones:GetMaxTeamSize() -- you need to set this for each map if maps have a different max number of players
 CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_1] = 0
 CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_2] = 0
 CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_3] = 0

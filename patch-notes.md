@@ -1,6 +1,8 @@
 # DOTA2v2 Patch Notes
-v1.4.1: bug fix
-- fixed bug where debug settings was enabled
+v2.0: GG out nerds
+- if all members in a team type gg in all chat, they will concede
+- bkb more viable, recipe cost 1450 -> 2450
+- primal beast not always added to pick screen
 
 ## Future ideas
 - GG feature
@@ -10,8 +12,15 @@ v1.4.1: bug fix
 - Data logging
     - Track damage values and recreate post game summary
 - 1v1 map
+- chickenhandler detection
+- force all random mode
+- better way to track gg
+- fix bkb hot buy bug
 
 ## Previous Patches
+v1.4.1: bug fix
+- fixed bug where debug settings was enabled
+
 v1.4: primal beast update
 - Added primal beast, the hero will always appear in select screen
 - changed AA name back to AA
@@ -25,7 +34,6 @@ v1.4: primal beast update
 - increase neutral creep gold multiplier from 1.32 -> 1.5
 - increased neutral creep xp multiplier from 15 -> 18
 - increased neutral creep xp scaling from 1 -> 2
-
 
 v1.3.7: bottle / deficit changes
 - increased max bottle charges back to 3

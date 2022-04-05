@@ -6,6 +6,7 @@
 #base "items/item_ward_observer.txt"
 #base "items/item_ward_sentry.txt"
 #base "items/item_bottle.txt"
+#base "items/item_recipe_black_king_bar.txt"
 
 "DOTAAbilities"
 {

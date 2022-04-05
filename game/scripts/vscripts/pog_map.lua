@@ -66,3 +66,12 @@ end
 function barebones:Is4v4()
     return GetMapName() == 'pog4v4'
 end
+function barebones:GetMaxTeamSize()
+    if barebones:Is2v2() then
+        return 2
+    elseif barebones:Is3v3() then
+        return 3
+    else
+        return 4
+    end
+end
