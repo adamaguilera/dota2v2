@@ -29,3 +29,8 @@ you can still play with 3, 5 or 7 players!
 
 ## Developer Setup
 - Follow [this guide](https://moddota.com/tools/setting-up-for-collaboration/#how-to-set-up-a-dota-2-mod-repository) for system linking your folder to dota addons
+
+
+
+
+###I have a small pp
