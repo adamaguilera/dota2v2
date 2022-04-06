@@ -159,7 +159,7 @@ function barebones:OnGG (player_id)
   end
   DebugPrint("After: ")
   barebones:printGG()
-  -- barebones:CheckGG(TEAM_GG)
+  barebones:CheckGG(TEAM_GG)
 end
 
 function barebones:CheckGG(t)
