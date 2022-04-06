@@ -1,23 +1,44 @@
 # DOTA2v2 Patch Notes
-v2.0: GG out nerds
-- if all members in a team type gg in all chat, they will concede
-- bkb more viable, recipe cost 1450 -> 2450
-- primal beast not always added to pick screen
+v2.1: item rework and gg improvements 
+- bkb rework:
+- bkb still gives 10 strength 24 damage
+- recipe changed from 2450 -> 1400
+- bkb full cost now 4000
+- bkb active applies basic display
+- bkb active gives 50% status resistance and 30% magic resistance
+- bkb duration 10/9/8/7s
+- bkb also makes you quite large
+- ward rework:
+- observer wards restock 300s -> 140s
+- observer wards duration 4m -> 3m
+- observer cast range 500 -> 400
+- fixed observer / sentry wards tooltip
+- sentry stock time from 120s -> 80s
+- sentry cost 25g -> 10g
+- sentry wards start stocked with 1
+- sentry ward max stock 10 -> 6
+- sentry ward cast range 500 -> 600
+- sentry ward duration 5m -> 3m
+- other minor changes:
+- tp scroll cost 60g -> 25g
+- tp scroll cd 40s -> 45s
+- tp scroll max distance from building reduced 800 -> 500
+- gg'ing will add a modifier so you can see if you are a quitter
 
 ## Future ideas
-- GG feature
-    - On typing GG in all chat, player is permantely stunned and counted as 'disconnected'
-    - A player can type ungg in all chat to remove this effect and 'reconnect'
-    - If all players on a team are GG'd then the game ends in 10s
 - Data logging
     - Track damage values and recreate post game summary
 - 1v1 map
 - chickenhandler detection
 - force all random mode
-- better way to track gg
-- fix bkb hot buy bug
+- cheap aoe damage item for creeps
 
 ## Previous Patches
+v2.0: GG out nerds
+- if all members in a team type gg in all chat, they will concede
+- bkb more viable, recipe cost 1450 -> 2450
+- primal beast not always added to pick screen
+
 v1.4.1: bug fix
 - fixed bug where debug settings was enabled
 

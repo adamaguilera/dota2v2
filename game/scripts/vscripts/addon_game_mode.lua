@@ -32,6 +32,7 @@ function Precache(context)
 	PrecacheResource("particle_folder", "particles/test_particle", context)
 
 	PrecacheResource("particle_folder", "particles/econ/items/juggernaut/jugg_fall20_immortal", context)
+	PrecacheResource("particle_folder", "particles/items/pog_black_king_bar_avatar.vpcf", context)
 	PrecacheUnitByNameSync( "npc_dota_pog_regen_rune", context )
 	PrecacheModel( "npc_dota_pog_regen_rune", context )
 

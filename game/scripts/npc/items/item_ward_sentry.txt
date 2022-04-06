@@ -13,13 +13,13 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"500"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"1.0"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"25"
+		"ItemCost"						"10"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"sentry ward"
@@ -27,9 +27,9 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
-		"ItemStockMax"					"10"
-		"ItemStockInitial"				"0"
-		"ItemStockTime"					"120"
+		"ItemStockMax"					"6"
+		"ItemStockInitial"				"1"
+		"ItemStockTime"					"80"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 		"ItemSupport"					"1"
 		"IsTempestDoubleClonable"		"0"
@@ -42,7 +42,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime"				"300"
+				"lifetime"				"180"
 			}
 			"02"
 			{
@@ -62,7 +62,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration_minutes_tooltip"				"7"
+				"duration_minutes_tooltip"				"3"
 			}
 		}
 	}

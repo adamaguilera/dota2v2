@@ -171,7 +171,7 @@
 		"item"      "item_eternal_shroud"
 		"item"      "item_crimson_guard"
 		"item"      "item_lotus_orb"
-		"item"      "item_black_king_bar"
+		"item"      "item_pog_black_king_bar"
 		"item"      "item_hurricane_pike"
 		"item"      "item_manta"
 		"item"      "item_sphere"

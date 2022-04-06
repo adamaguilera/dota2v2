@@ -1,21 +1,22 @@
 "DOTAAbilities"
 {
-    "item_recipe_black_king_bar"
+    "item_recipe_pog_black_king_bar"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"115"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"115"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2450"	
+		"ItemCost"						"1400"	
 		"ItemShopTags"					""
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_black_king_bar"
+		"ItemResult"					"item_pog_black_king_bar"
 		"ItemRequirements"
 		{
 			"01"						"item_ogre_axe;item_mithril_hammer"

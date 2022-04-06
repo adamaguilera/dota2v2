@@ -290,6 +290,8 @@ function barebones:InitGameMode()
 	LinkLuaModifier("modifier_custom_invulnerable", "modifiers/modifier_custom_invulnerable", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_pog_regen_rune", "modifiers/modifier_pog_regen_rune", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_player_deficit", "modifiers/modifier_player_deficit", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_pog_gg", "modifiers/modifier_pog_gg", LUA_MODIFIER_MOTION_NONE)
+
 
 	print("[BAREBONES] initialized.")
 	DebugPrint("[BAREBONES] Done loading the game mode!\n\n")

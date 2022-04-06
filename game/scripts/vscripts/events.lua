@@ -698,7 +698,7 @@ function barebones:OnPlayerChat(keys)
 	local playerID = keys.playerid
 	local text = keys.text
 
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS and text == 'gg' then
+	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS and string.lower(text) == 'gg' then
 		barebones:OnGG(playerID)
 	end
 end

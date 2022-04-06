@@ -151,9 +151,15 @@ function barebones:OnGG (player_id)
     TEAM_GG[team_id] = TEAM_GG[team_id] + 1
     PLAYER_GG[player_id] = true
   end
+  local hero = PlayerResource:GetPlayer(player_id):GetAssignedHero()
+  if PLAYER_GG[player_id] then
+    hero:AddNewModifier(hero, nil, "modifier_pog_gg", {})
+  else
+    hero:RemoveModifierByName("modifier_pog_gg")
+  end
   DebugPrint("After: ")
   barebones:printGG()
-  barebones:CheckGG(TEAM_GG)
+  -- barebones:CheckGG(TEAM_GG)
 end
 
 function barebones:CheckGG(t)

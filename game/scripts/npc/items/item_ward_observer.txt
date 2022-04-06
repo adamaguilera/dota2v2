@@ -14,7 +14,7 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"500"
+		"AbilityCastRange"				"400"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"1.0"
 		
@@ -30,7 +30,7 @@
 		"ItemInitialCharges"			"1"
 		"ItemStockMax"					"2"
 		"ItemStockInitial"				"1"
-		"ItemStockTime"					"300.0"
+		"ItemStockTime"					"140.0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 		"ItemSupport"					"1"
 		"IsTempestDoubleClonable"		"0"
@@ -43,7 +43,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifetime"				"240"
+				"lifetime"				"180"
 			}
 			"02"
 			{
@@ -58,7 +58,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration_minutes_tooltip"				"6"
+				"duration_minutes_tooltip"				"3"
 			}
 		}
 	}
