@@ -1,4 +1,20 @@
 # DOTA2v2 Patch Notes
+v2.2.2: bkb revert
+- bkb strength 18 -> 10
+- bkb magic resistance active 40% -> 35%
+
+
+## Future ideas
+- Data logging
+    - Track damage values and recreate post game summary
+- 1v1 map
+- chickenhandler detection
+- force all random mode
+- cheap aoe damage item for creeps
+- 3v3 ALL RANDOM map
+- pog basic gear
+
+## Previous Patches
 v2.2.1: bkb and gamerule changes
 - bkb cooldown reduced to 60s
 - bkb can now be cast while stunned
@@ -19,19 +35,6 @@ v2.2.1: bkb and gamerule changes
 - pog regen effects now stack and refresh duration
 - neutral rune drop chance 20% -> 18%
 
-
-
-## Future ideas
-- Data logging
-    - Track damage values and recreate post game summary
-- 1v1 map
-- chickenhandler detection
-- force all random mode
-- cheap aoe damage item for creeps
-- 3v3 ALL RANDOM map
-- pog basic gear
-
-## Previous Patches
 v2.1: item rework and gg improvements 
 - bkb rework:
 - bkb still gives 10 strength 24 damage

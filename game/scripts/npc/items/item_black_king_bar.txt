@@ -32,7 +32,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"18"
+				"bonus_strength"		"10"
 			}
 			"02"
 			{
@@ -57,7 +57,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_magic_resistance"		"40"
+				"bonus_magic_resistance"		"35"
 			}
 			"07"
 			{
