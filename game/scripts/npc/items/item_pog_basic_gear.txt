@@ -1,0 +1,45 @@
+"DOTAAbilities"
+{
+	"item_pog_basic_gear"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1001"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				""AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"            "item_black_king_bar"
+        "ScriptFile"                    "items/item_pog_basic_gear"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"100"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"750"
+		"ItemShopTags"					"str;agi;int"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemSellable"					"1"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_radius"		"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"5"
+			}
+		}
+	}
+}

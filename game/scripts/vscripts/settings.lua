@@ -15,14 +15,14 @@ require('pog_map')
 -- ROSHAN_MINIMUM_RESPAWN = 15
 -- ROSHAN_MAXIMUM_RESPAWN = 20
 
--- OFFICIAL SETTINGS
+-- -- OFFICIAL SETTINGS
 USE_DEBUG = false                       -- Should we print statements on almost every function/event call? For debugging.
 ENABLE_BANNING_PHASE = true             -- Should we enable banning phase? Set to true if "EnablePickRules" is "1" in 'addoninfo.txt'
 CUSTOM_GAME_SETUP_TIME = 8.0           -- How long should custom game setup last - the screen where players pick a team?
 BANNING_PHASE_TIME = 20.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
 PRE_GAME_TIME = 60.0                    -- How long after showcase time should the horn blow and the game start?
 HERO_SELECTION_TIME = 40.0
-HERO_SELECTION_PENALTY_TIME = 5.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
+HERO_SELECTION_PENALTY_TIME = 10.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
 UNIVERSAL_SHOP_MODE = false             -- Should the shops contain all items?
 NORMAL_START_GOLD = 700                 -- Starting Gold
 ROSHAN_MINIMUM_RESPAWN = 240
@@ -34,14 +34,15 @@ ROSHAN_MAXIMUM_RESPAWN = 360
 -- Pog Settings
 POG_HERO_POOL = {}
 POG_HERO_SELECTED = {}
-POG_MAX_ADDITIONAL_BANS = 14
+POG_MAX_ADDITIONAL_BANS = 8
 POG_ADDITIONAL_BAN_FREQUENCY = 2
 
 -- hero selection
 DOTA_MAX_HERO_COUNT = 137
-POG_BAN_COUNT = 100
+POG_BAN_COUNT = 110
 POG_MAX_PLAYER_COUNT = 10
-POG_SELECTION_PENALTY_PER_TICK = 25
+POG_SELECTION_PENALTY_PER_TICK = -50
+POG_RANDOM_GOLD = 200
 
 -- respawn timer
 POG_RESPAWN_REDUCTION_PERCENT = 0.72
@@ -62,7 +63,7 @@ POG_4v4_SIEGE_ADDITIONAL_SPAWN = 1
 
 -- gold / experience multipliers
 POG_HERO_GOLD_MULTIPLIER = 1.15
-POG_NEUTRAL_GOLD_MULTIPLIER = 1.5
+POG_NEUTRAL_GOLD_MULTIPLIER = 1.46
 POG_CREEP_GOLD_MULTIPLIER = 1.30
 POG_CREEP_EXPERIENCE_MULTIPLIER = 1.85
 
@@ -75,7 +76,7 @@ POG_SHRINE_INITIAL_CD = 120
 
 
 -- experience scaling
-POG_NEUTRAL_EXPERIENCE_BASE = 18
+POG_NEUTRAL_EXPERIENCE_BASE = 13
 POG_NEUTRAL_EXPERIENCE_SCALING = 2 -- per minute
 POG_DEFICIT_NEUTRAL_EXPERIENCE_ADDITIONAL = 25
 POG_4v4_NEUTRAL_EXPERIENCE_SCALING = 1.40
@@ -110,7 +111,7 @@ POG_DYNAMIC_CALCULATIONS = false
 
 -- rune
 POG_RUNE_SPAWN_RATE = 180
-NEUTRAL_RUNE_DROP_CHANCE = 20
+NEUTRAL_RUNE_DROP_CHANCE = 18
 LANE_CREEP_RUNE_DROP_CHANCE = 10
 
 -- Regen rune

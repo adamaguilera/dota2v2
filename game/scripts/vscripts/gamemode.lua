@@ -122,6 +122,7 @@ function barebones:InitGameMode()
 	GameRules:SetSameHeroSelectionEnabled(ALLOW_SAME_HERO_SELECTION)
 	GameRules:SetUseUniversalShopMode(UNIVERSAL_SHOP_MODE)
 	GameRules:SetHeroRespawnEnabled(ENABLE_HERO_RESPAWN)
+	GameRules:SetFilterMoreGold(true)
 
 	GameRules:SetHeroSelectionTime(HERO_SELECTION_TIME) -- THIS IS IGNORED when "EnablePickRules" is "1" in 'addoninfo.txt' !
 	GameRules:SetHeroSelectPenaltyTime(HERO_SELECTION_PENALTY_TIME)

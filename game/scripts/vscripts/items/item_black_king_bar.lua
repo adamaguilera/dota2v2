@@ -113,7 +113,8 @@ function modifier_item_pog_black_king_bar_buff:OnCreated()
     self.model_scale = self.ability:GetSpecialValueFor("model_scale") 
     
     self.bonus_status_resistance = self.ability:GetSpecialValueFor("bonus_status_resistance") 
-    self.bonus_magic_resistance = self.ability:GetSpecialValueFor("bonus_magic_resistance") 
+    self.bonus_magic_resistance = self.ability:GetSpecialValueFor("bonus_magic_resistance")
+    self.bonus_strength = self.ability:GetSpecialValueFor("bonus_strength") 
 end
 
 
@@ -127,7 +128,7 @@ function modifier_item_pog_black_king_bar_buff:CheckState()
 end
 
 function modifier_item_pog_black_king_bar_buff:DeclareFunctions()
-    local decFuncs = {MODIFIER_PROPERTY_MODEL_SCALE, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS, MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING}
+    local decFuncs = {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_MODEL_SCALE, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS, MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING}
     return decFuncs
 end
 
@@ -140,4 +141,12 @@ end
 
 function modifier_item_pog_black_king_bar_buff:GetModifierModelScale()
     return self.model_scale
+end
+
+function modifier_item_pog_black_king_bar_buff:GetModifierBonusStats_Strength()
+    return self.bonus_strength
+end
+
+function modifier_item_pog_black_king_bar_buff:GetModifierPreAttack_BonusDamage()
+    return self.bonus_damage
 end

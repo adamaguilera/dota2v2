@@ -291,7 +291,7 @@ function barebones:GoldFilter(keys)
 	-- DOTA_ModifyGold_AbilityGold = 19
 	-- DOTA_ModifyGold_WardKill = 20
 
-	DebugPrint("Gold being given, reason: "..reason)
+	DebugPrint("Gold being changed, reason: "..reason)
 
 	-- Disable all hero kill gold
 	-- if DISABLE_ALL_GOLD_FROM_HERO_KILLS then

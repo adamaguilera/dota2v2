@@ -1,4 +1,37 @@
 # DOTA2v2 Patch Notes
+v2.2.1: bkb and gamerule changes
+- bkb cooldown reduced to 60s
+- bkb can now be cast while stunned
+- bkb magic resistance increased 30% -> 40%
+- bkb recipe cost reduced from 1400 -> 1250 (3850 total)
+- bkb gives strength 18, damage 24
+- bkb active now doubles stats
+- tp scroll cost 25g -> 35g
+- gg'ing modifier now shows when dead
+- observer ward cast range 400 -> 350
+- increased hero ban by 10 (before pick phase)
+- decreased max live ban count by 6
+- randoming gives you 200 extra gold
+- neutral creeps base experience 18 -> 13
+- neutral creep gold multiplier 1.5 -> 1.46
+- hero select penalty -2g/s -> -50g/s *icon still shows -2g
+- hero select penalty time 5s -> 10s
+- pog regen effects now stack and refresh duration
+- neutral rune drop chance 20% -> 18%
+
+
+
+## Future ideas
+- Data logging
+    - Track damage values and recreate post game summary
+- 1v1 map
+- chickenhandler detection
+- force all random mode
+- cheap aoe damage item for creeps
+- 3v3 ALL RANDOM map
+- pog basic gear
+
+## Previous Patches
 v2.1: item rework and gg improvements 
 - bkb rework:
 - bkb still gives 10 strength 24 damage
@@ -25,15 +58,6 @@ v2.1: item rework and gg improvements
 - tp scroll max distance from building reduced 800 -> 500
 - gg'ing will add a modifier so you can see if you are a quitter
 
-## Future ideas
-- Data logging
-    - Track damage values and recreate post game summary
-- 1v1 map
-- chickenhandler detection
-- force all random mode
-- cheap aoe damage item for creeps
-
-## Previous Patches
 v2.0: GG out nerds
 - if all members in a team type gg in all chat, they will concede
 - bkb more viable, recipe cost 1450 -> 2450

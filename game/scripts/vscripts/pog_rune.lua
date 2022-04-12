@@ -4,6 +4,11 @@ function barebones:PogRuneOnUnitKilled (killer_unit, killed_unit)
   if killed_unit:GetUnitName() == "npc_dota_pog_regen_rune" then
     -- do rune effect
     killer_unit:AddNewModifier(killer_unit, nil, "modifier_pog_regen_rune", {duration=POG_RUNE_REGEN_DURATION})
+    pog_regen = killer_unit:FindModifierByName("modifier_pog_regen_rune")
+    if pog_regen ~= nil then
+      pog_regen:IncrementStackCount()
+      pog_regen:ForceRefresh()
+    end
     
     if killer_unit:GetOwnerEntity() ~= nil and killer_unit:GetOwnerEntity():IsPlayer() then
       DebugPrint("PlayerID then "..killer_unit:GetOwnerEntity():GetPlayerID())

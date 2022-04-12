@@ -34,8 +34,6 @@ end
 -- end
 
 function modifier_pog_regen_rune:OnCreated()
-	-- Set the amount of damage instances we can take as stacks
-	-- self:S()
 end
 
 function modifier_pog_regen_rune:OnRefresh()
@@ -52,19 +50,19 @@ function modifier_pog_regen_rune:DeclareFunctions()
 end
 
 function modifier_pog_regen_rune:GetModifierConstantHealthRegen()
-	return POG_RUNE_REGEN_HEAL_BASE
+	return POG_RUNE_REGEN_HEAL_BASE * self:GetStackCount()
 end
 
 function modifier_pog_regen_rune:GetModifierHealthRegenPercentage()
-	return POG_RUNE_REGEN_HEAL_PCT
+	return POG_RUNE_REGEN_HEAL_PCT * self:GetStackCount()
 end
 
 function modifier_pog_regen_rune:GetModifierConstantManaRegen()
-	return POG_RUNE_REGEN_MANA_BASE
+	return POG_RUNE_REGEN_MANA_BASE * self:GetStackCount()
 end
 
 function modifier_pog_regen_rune:GetModifierTotalPercentageManaRegen()
-	return POG_RUNE_REGEN_MANA_PCT
+	return POG_RUNE_REGEN_MANA_PCT * self:GetStackCount()
 end
 
 -- Decrease damage instance stacks on hero damage recieved, if we lose all stacks, remove modifier

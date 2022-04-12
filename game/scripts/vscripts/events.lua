@@ -108,6 +108,14 @@ function barebones:OnNPCSpawned(keys)
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
 		self:OnHeroInGame(npc)
+	elseif unit_owner ~= nil and unit_owner:IsPlayer() and npc:IsRealHero() then
+		-- don't check on first spawn since nil errors
+		-- check if you need to add gg modifier b/c gg while dead
+		Timers:CreateTimer(0.5, function()
+			if barebones:IsGG(npc:GetPlayerID()) then
+				unit:AddNewModifier(npc, nil, "modifier_pog_gg", {})
+			end
+		end)
 	end
 end
 
@@ -136,6 +144,11 @@ function barebones:OnHeroInGame(hero)
 
 	Timers:CreateTimer(0.5, function()
 		local playerID = hero:GetPlayerID()	-- never nil (-1 by default), needs delay 1 or more frames
+
+		-- check for random buff
+		if PlayerResource:HasRandomed(playerID) then
+			hero:ModifyGold(POG_RANDOM_GOLD, true, DOTA_ModifyGold_Unspecified)
+		end
 
 		if PlayerResource:IsFakeClient(playerID) then
 			-- This is happening only for bots

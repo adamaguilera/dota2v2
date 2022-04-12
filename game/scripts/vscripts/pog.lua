@@ -162,6 +162,10 @@ function barebones:OnGG (player_id)
   barebones:CheckGG(TEAM_GG)
 end
 
+function barebones:IsGG(player_id)
+  return PLAYER_GG[player_id]
+end
+
 function barebones:CheckGG(t)
   local losing_team = -1
   for team, ggs in pairs(t) do
