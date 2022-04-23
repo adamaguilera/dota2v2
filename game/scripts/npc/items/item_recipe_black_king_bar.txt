@@ -10,7 +10,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1250"	
+		"ItemCost"						"500"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -19,7 +19,7 @@
 		"ItemResult"					"item_pog_black_king_bar"
 		"ItemRequirements"
 		{
-			"01"						"item_ogre_axe;item_mithril_hammer"
+			"01"						"item_cloak;item_sange"
 		}
 	}
 }

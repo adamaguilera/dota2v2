@@ -21,6 +21,10 @@ function item_pog_black_king_bar:OnSpellStart()
     -- tooltip
     self.status_resistance = ability:GetSpecialValueFor("bonus_status_resistance") 
     self.magic_resistance = ability:GetSpecialValueFor("bonus_magic_resistance") 
+    self.magic_resistance = ability:GetSpecialValueFor("bonus_magic_resistance")
+    self.strength = ability:GetSpecialValueFor("bonus_strength") 
+    self.regen_amp = ability:GetSpecialValueFor("bonus_regen_amp")
+
 
     -- Level up the item if relevant
     if ability:GetLevel() < max_level then
@@ -34,7 +38,7 @@ function item_pog_black_king_bar:OnSpellStart()
     EmitSoundOn(sound_cast, caster)
 
     -- Apply basic dispel
-    caster:Purge(false, true, false, false, false)
+    caster:Purge(false, true, false, true, true)
 
     -- Give caster the buff
     caster:AddNewModifier(caster, ability, modifier_bkb, {duration = duration})
@@ -62,8 +66,10 @@ function modifier_item_pog_black_king_bar:OnCreated()
     self.ability = self:GetAbility()
 
     -- Ability specials
-    self.bonus_strength = self.ability:GetSpecialValueFor("bonus_strength")
-    self.bonus_damage = self.ability:GetSpecialValueFor("bonus_damage")    
+    self.bonus_status_resistance = self.ability:GetSpecialValueFor("bonus_status_resistance") 
+    self.bonus_magic_resistance = self.ability:GetSpecialValueFor("bonus_magic_resistance")
+    self.bonus_strength = self.ability:GetSpecialValueFor("bonus_strength") 
+    self.bonus_regen_amp = self.ability:GetSpecialValueFor("bonus_regen_amp")
 
     -- Set the item's level according to the caster, if any
     if IsServer() then
@@ -76,16 +82,33 @@ function modifier_item_pog_black_king_bar:OnCreated()
 end
 
 function modifier_item_pog_black_king_bar:DeclareFunctions()
-    local decFuncs = {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS}
+    local decFuncs = {MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS, MODIFIER_PROPERTY_STATUS_RESISTANCE}
     return decFuncs
 end
-function modifier_item_pog_black_king_bar:GetModifierPreAttack_BonusDamage()
-    return self.bonus_damage
+
+function modifier_item_pog_black_king_bar:GetModifierStatusResistance()
+	return self.bonus_status_resistance
+end
+function modifier_item_pog_black_king_bar:GetModifierMagicalResistanceBonus()
+	return self.bonus_magic_resistance
+end
+
+function modifier_item_pog_black_king_bar:GetModifierModelScale()
+    return self.model_scale
 end
 
 function modifier_item_pog_black_king_bar:GetModifierBonusStats_Strength()
     return self.bonus_strength
 end
+
+function modifier_item_pog_black_king_bar:MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE()
+    return self.bonus_regen_amp
+end
+
+function modifier_item_pog_black_king_bar:MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE()
+    return self.bonus_regen_amp
+end
+
 
 ----------------------------------
 -- BLACK KING BAR BUFF MODIFIER --
@@ -115,6 +138,7 @@ function modifier_item_pog_black_king_bar_buff:OnCreated()
     self.bonus_status_resistance = self.ability:GetSpecialValueFor("bonus_status_resistance") 
     self.bonus_magic_resistance = self.ability:GetSpecialValueFor("bonus_magic_resistance")
     self.bonus_strength = self.ability:GetSpecialValueFor("bonus_strength") 
+    self.bonus_regen_amp = self.ability:GetSpecialValueFor("bonus_regen_amp")
 end
 
 
@@ -128,7 +152,7 @@ function modifier_item_pog_black_king_bar_buff:CheckState()
 end
 
 function modifier_item_pog_black_king_bar_buff:DeclareFunctions()
-    local decFuncs = {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_MODEL_SCALE, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS, MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING}
+    local decFuncs = {MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_MODEL_SCALE, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS, MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING}
     return decFuncs
 end
 
@@ -147,6 +171,10 @@ function modifier_item_pog_black_king_bar_buff:GetModifierBonusStats_Strength()
     return self.bonus_strength
 end
 
-function modifier_item_pog_black_king_bar_buff:GetModifierPreAttack_BonusDamage()
-    return self.bonus_damage
+function modifier_item_pog_black_king_bar_buff:MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE()
+    return self.bonus_regen_amp
+end
+
+function modifier_item_pog_black_king_bar_buff:MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE()
+    return self.bonus_regen_amp
 end

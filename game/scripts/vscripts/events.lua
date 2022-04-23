@@ -110,11 +110,12 @@ function barebones:OnNPCSpawned(keys)
 		self:OnHeroInGame(npc)
 	elseif unit_owner ~= nil and unit_owner:IsPlayer() and npc:IsRealHero() then
 		-- don't check on first spawn since nil errors
-		-- check if you need to add gg modifier b/c gg while dead
+		-- check if you need to add gg modifier b/c gg while dead & pog deficit if disconnect while dead
 		Timers:CreateTimer(0.5, function()
 			if barebones:IsGG(npc:GetPlayerID()) then
 				unit:AddNewModifier(npc, nil, "modifier_pog_gg", {})
 			end
+			barebones:ApplyPogDeficit(npc:GetPlayerID())
 		end)
 	end
 end
@@ -711,7 +712,7 @@ function barebones:OnPlayerChat(keys)
 	local playerID = keys.playerid
 	local text = keys.text
 
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS and string.lower(text) == 'gg' then
+	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS and string.lower(text) == 'gg' and not team_only then
 		barebones:OnGG(playerID)
 	end
 end

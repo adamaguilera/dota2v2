@@ -23,19 +23,19 @@ function barebones:SetTeamCounts()
     end
   end
   for id = 0, POG_MAX_PLAYER_COUNT do
-    if PlayerResource:IsValidPlayerID(id) then
-      -- DebugPrint("id: "..id.." is valid")
-      local hero = PlayerResource:GetPlayer(id):GetAssignedHero()
-      if hero ~= nil then
-        -- DebugPrint("hero is not nil")
-        if barebones:PlayerOnDeficitTeam(id) then
-          -- DebugPrint("On Deficit Team")
-          hero:AddNewModifier(hero, nil, "modifier_player_deficit", {})
-          -- DebugPrint("deficit by: "..barebones:DeficitStackCount(id))
-          hero:SetModifierStackCount("modifier_player_deficit", hero, barebones:DeficitStackCount(id))
-        elseif hero:HasModifier("modifier_player_deficit") then
-          hero:RemoveModifierByName("modifier_player_deficit")
-        end
+    barebones:ApplyPogDeficit(id)
+  end
+end
+
+function barebones:ApplyPogDeficit(playerID)
+  if PlayerResource:IsValidPlayerID(playerID) then
+    local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero()
+    if hero ~= nil then
+      if barebones:PlayerOnDeficitTeam(playerID) then
+        hero:AddNewModifier(hero, nil, "modifier_player_deficit", {})
+        hero:SetModifierStackCount("modifier_player_deficit", hero, barebones:DeficitStackCount(playerID))
+      elseif hero:HasModifier("modifier_player_deficit") then
+        hero:RemoveModifierByName("modifier_player_deficit")
       end
     end
   end

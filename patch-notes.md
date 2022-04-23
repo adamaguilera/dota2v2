@@ -1,7 +1,12 @@
 # DOTA2v2 Patch Notes
-v2.2.2: bkb revert
-- bkb strength 18 -> 10
-- bkb magic resistance active 40% -> 35%
+v2.3: bkb changes
+- bkb now crafted with
+- cloak, sange and recipe total cost 3050g
+- bkb recipe now 500g
+- bkb grants 25% magic resistance, 20 strength, 20% status resistance and 35% hp regen / lifesteal amp
+- bkb active now strong dispels and doubles item passives
+- bkb can still be cast while disabled
+- fixed bug where pog deficit not given if dead while teammate disconnects
 
 
 ## Future ideas
@@ -13,8 +18,13 @@ v2.2.2: bkb revert
 - cheap aoe damage item for creeps
 - 3v3 ALL RANDOM map
 - pog basic gear
+- travel boots changes
 
 ## Previous Patches
+v2.2.2: bkb revert
+- bkb strength 18 -> 10
+- bkb magic resistance active 40% -> 35%
+
 v2.2.1: bkb and gamerule changes
 - bkb cooldown reduced to 60s
 - bkb can now be cast while stunned

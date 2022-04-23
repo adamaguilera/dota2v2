@@ -17,8 +17,8 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3850"
-		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemCost"						"3050"
+		"ItemShopTags"					"str;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bkb;black king bar"
 		"ItemSellable"					"1"
@@ -32,12 +32,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"10"
+				"bonus_strength"		"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"24"
+				"bonus_regen_amp"			"35"
 			}
 			"03"
 			{
@@ -57,12 +57,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_magic_resistance"		"35"
+				"bonus_magic_resistance"		"25"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_status_resistance"		"50"
+				"bonus_status_resistance"		"20"
 			}
 		}
 	}
