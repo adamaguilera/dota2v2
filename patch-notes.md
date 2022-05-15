@@ -1,13 +1,15 @@
 # DOTA2v2 Patch Notes
-v2.3: bkb changes
-- bkb now crafted with
-- cloak, sange and recipe total cost 3050g
-- bkb recipe now 500g
-- bkb grants 25% magic resistance, 20 strength, 20% status resistance and 35% hp regen / lifesteal amp
-- bkb active now strong dispels and doubles item passives
-- bkb can still be cast while disabled
-- fixed bug where pog deficit not given if dead while teammate disconnects
-
+v2.3.2: patch
+- fix gg actually, now only works in global chat
+- creeps dont immediately upgrade to megas (a single racks will set them to upgraded now)
+- increased scaling of upgraded and megas 
+- upgraded additional damage per min -> 1
+- upgraded additional health per min -> 8
+- megas additional damage per min -> 3
+- megas additional health per min -> 30
+- shared gold decreased 66 -> 60
+- missed gold increased from 20 -> 25
+- runes spawn every 2 minutes per chickenhandlers suggestion
 
 ## Future ideas
 - Data logging
@@ -21,6 +23,18 @@ v2.3: bkb changes
 - travel boots changes
 
 ## Previous Patches
+v2.3.1: fix gg
+- fix gg
+
+v2.3: bkb rework
+- bkb now crafted with
+- cloak, sange and recipe total cost 3050g
+- bkb recipe now 500g
+- bkb grants 25% magic resistance, 20 strength, 20% status resistance and 35% hp regen / lifesteal amp
+- bkb active now strong dispels and doubles item passives
+- bkb can still be cast while disabled
+- fixed bug where pog deficit not given if dead while teammate disconnects
+
 v2.2.2: bkb revert
 - bkb strength 18 -> 10
 - bkb magic resistance active 40% -> 35%

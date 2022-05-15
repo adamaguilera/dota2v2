@@ -1,52 +1,28 @@
 -- GET CREEP FUNCTIONS
-function barebones:getMeleeCreep(isRadiant)
-  local melee = "npc_dota_creep_"
-  local barracks = ""
+function barebones:getCreep(prefix, type, isRadiant, upgradesOnMelee)
+	local creep = prefix
+	-- local ranged = "npc_dota_creep_"
+	local rangedbarracks = ""
+	local meleebarracks = ""
 	if isRadiant then
-		melee = melee.."goodguys_melee"
-		barracks = "bad_rax_melee_mid"
+		creep = creep.."goodguys_"..type
+		rangedbarracks = "bad_rax_range_mid"
+		meleebarracks = "bad_rax_melee_mid"
 	else
-		melee = melee.."badguys_melee"
-		barracks = "good_rax_melee_mid"
+		creep = creep.."badguys_"..type
+		rangedbarracks = "good_rax_range_mid"
+		meleebarracks = "good_rax_melee_mid"
 	end
-  if Entities:FindByName(nil, barracks) == nil then
-		return melee.."_upgraded_mega"
+	if Entities:FindByName(nil, rangedbarracks) == nil and Entities:FindByName(nil, meleebarracks) == nil then
+		return creep.."_upgraded_mega"
 	end
-  return melee
-end
-
--- "npc_dota_creep_goodguys_ranged"
-function barebones:getRangedCreep(isRadiant)
-  local ranged = "npc_dota_creep_"
-  local barracks = ""
-	if isRadiant then
-		ranged = ranged.."goodguys_ranged"
-		barracks = "bad_rax_range_mid"
+	if upgradesOnMelee and Entities:FindByName(nil, meleebarracks) == nil then
+		return creep.."_upgraded"
+	elseif not upgradesOnMelee and Entities:FindByName(nil, rangedbarracks) == nil then
+		return creep.."_upgraded"
 	else
-		ranged = ranged.."badguys_ranged"
-		barracks = "good_rax_range_mid"
+		return creep
 	end
-  if Entities:FindByName(nil, barracks) == nil then
-		return ranged.."_upgraded_mega"
-	end
-  return ranged
-end
-
--- npc_dota_goodguys_siege_upgraded_mega
-function barebones:getSiegeCreep(isRadiant)
-  local siege = "npc_dota_"
-  local barracks = ""
-	if isRadiant then
-		siege = siege.."goodguys_siege"
-		barracks = "bad_rax_range_mid"
-	else
-		siege = siege.."badguys_siege"
-		barracks = "good_rax_range_mid"
-	end
-  if Entities:FindByName(nil, barracks) == nil then
-		return siege.."_upgraded_mega"
-	end
-  return siege
 end
 
 function barebones:Get_POG_NEUTRAL_EXPERIENCE (playerID)
@@ -162,14 +138,14 @@ function barebones:spawnWave(type, amount, team, spawner, destination, isRadiant
 		for i = 1, amount do
       local creep_name
       if type == "siege" then
-        creep_name = barebones:getSiegeCreep(isRadiant)
+        creep_name = barebones:getCreep("npc_dota_", "siege", isRadiant, false)
         if not barebones:CanSpawnSiege() then
           return 60.0
         end
       elseif type == "ranged" then
-        creep_name = barebones:getRangedCreep(isRadiant)
+        creep_name = barebones:getCreep("npc_dota_creep_", "ranged", isRadiant, false)
       else
-        creep_name = barebones:getMeleeCreep(isRadiant)
+        creep_name = barebones:getCreep("npc_dota_creep_", "melee", isRadiant, true)
       end
 			local unit = CreateUnitByName(creep_name, point+RandomVector(RandomInt(100,200)), true, nil, nil, team)
 			Timers:CreateTimer(function()

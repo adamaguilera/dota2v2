@@ -77,15 +77,20 @@ function barebones:OnNPCSpawned(keys)
 
 	--  or string.find(unit:GetUnitName(), "_neutral_") 
 	if unit:GetClassname() == "npc_dota_creep_lane" or unit:GetClassname() == "npc_dota_creep_siege" then
-		
-		-- if string.find(unit:GetUnitName(), "upgraded") then 
+		local is_upgraded = false
+		local is_mega = false
+		if string.find(unit:GetUnitName(), "upgraded") then 
+			is_upgraded = true
+		elseif string.find(unit:GetUnitName(), "mega") then 
+			is_mega = true
+		end
 		-- 	multiplier	= creep_scaling_ability:GetSpecialValueFor("super_mult")
 		
 		
 		local game_time	= math.floor(GameRules:GetDOTATime(false, false) / 60)
 		-- local game_time = 10
-		local additional_damage = barebones:Get_POG_CREEP_DAMAGE_SCALING(unit:GetTeamNumber()) * game_time
-		local additional_health = barebones:Get_POG_CREEP_HEALTH_SCALING(unit:GetTeamNumber()) * game_time
+		local additional_damage = barebones:Get_POG_CREEP_DAMAGE_SCALING(unit:GetTeamNumber(), is_upgraded, is_mega) * game_time
+		local additional_health = barebones:Get_POG_CREEP_HEALTH_SCALING(unit:GetTeamNumber(), is_upgraded, is_mega) * game_time
 		-- DebugPrint("Gametime: "..game_time)
 		-- DebugPrint("Spawning creeps with additional damage: "..additional_damage)
 		-- DebugPrint("Spawning creeps with additional health: "..additional_health)
@@ -705,14 +710,15 @@ end
 -- This function is called whenever any player sends a chat message to team or to All
 function barebones:OnPlayerChat(keys)
 	DebugPrint("[BAREBONES] Player used the chat")
-	--PrintTable(keys)
+	PrintTable(keys)
 
 	local team_only = keys.teamonly -- true if team only chat
 	local userID = keys.userid
 	local playerID = keys.playerid
 	local text = keys.text
 
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS and string.lower(text) == 'gg' and not team_only then
+	DebugPrint("[BAREBONES] Player used the chat")
+	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS and string.lower(text) == 'gg' and team_only == 0 then
 		barebones:OnGG(playerID)
 	end
 end

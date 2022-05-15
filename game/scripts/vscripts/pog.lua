@@ -228,26 +228,36 @@ function barebones:Get_POG_CREEP_EXPERIENCE_MULTIPLIER(player_id)
 end
 
 -- CREEP SCALING
-function barebones:Get_POG_CREEP_DAMAGE_SCALING(team_id)
+function barebones:Get_POG_CREEP_DAMAGE_SCALING(team_id, is_upgraded, is_mega)
   local additional_damage = POG_CREEP_DAMAGE_SCALING
   if barebones:Is4v4() then
     additional_damage = additional_damage + POG_4v4_CREEP_DAMAGE_SCALING_ADD
   end
-
   if barebones:TeamHasDeficit(team_id) then
     additional_damage = additional_damage + POG_DEFICIT_CREEP_DAMAGE_SCALING_ADD
+  end
+  if is_upgraded then
+    additional_damage = additional_damage + POG_UPGRADED_DAMAGE_ADD
+  end
+  if is_mega then
+    additional_damage = additional_damage + POG_MEGA_DAMAGE_ADD
   end
   return additional_damage
 end
 
-function barebones:Get_POG_CREEP_HEALTH_SCALING(team_id)
+function barebones:Get_POG_CREEP_HEALTH_SCALING(team_id, is_upgraded, is_mega)
   local additional_health = POG_CREEP_HEALTH_SCALING
   if barebones:Is4v4() then
     additional_health = additional_health + POG_4v4_CREEP_HEALTH_SCALING_ADD
   end
-
   if barebones:TeamHasDeficit(team_id) then
     additional_health = additional_health + POG_DEFICIT_CREEP_HEALTH_SCALING_ADD
+  end
+  if is_upgraded then
+    additional_health = additional_health + POG_UPGRADED_HEALTH_ADD
+  end
+  if is_mega then
+    additional_health = additional_health + POG_MEGA_HEALTH_ADD
   end
   return additional_health
 end

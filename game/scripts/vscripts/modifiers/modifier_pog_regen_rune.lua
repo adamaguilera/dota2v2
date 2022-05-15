@@ -1,5 +1,8 @@
 -- LinkLuaModifier("modifier_pog_regen_rune_aura", "components/modifiers/runes/modifier_pog_regen_rune", LUA_MODIFIER_MOTION_NONE)
-
+POG_RUNE_REGEN_HEAL_BASE = 50
+POG_RUNE_REGEN_HEAL_PCT = 4.2 -- %
+POG_RUNE_REGEN_MANA_BASE = 24
+POG_RUNE_REGEN_MANA_PCT = 3.2 -- %
 modifier_pog_regen_rune = modifier_pog_regen_rune or class({})
 
 -- Modifier property stuff
