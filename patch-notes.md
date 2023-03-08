@@ -1,4 +1,6 @@
 # DOTA2v2 Patch Notes
+v2.4: added muerta
+
 v2.3: bkb changes
 - bkb now crafted with
 - cloak, sange and recipe total cost 3050g
