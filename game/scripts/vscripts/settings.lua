@@ -16,17 +16,17 @@ ROSHAN_MINIMUM_RESPAWN = 240
 ROSHAN_MAXIMUM_RESPAWN = 360
 
 -- TESTING SETTINGS
--- USE_DEBUG = true                       -- Should we print statements on almost every function/event call? For debugging.
--- ENABLE_BANNING_PHASE = false             -- Should we enable banning phase? Set to true if "EnablePickRules" is "1" in 'addoninfo.txt'
--- CUSTOM_GAME_SETUP_TIME = 3.0           -- How long should custom game setup last - the screen where players pick a team?
--- BANNING_PHASE_TIME = 0.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
--- PRE_GAME_TIME = 3.0                    -- How long after showcase time should the horn blow and the game start?
--- HERO_SELECTION_TIME = 1.0
--- HERO_SELECTION_PENALTY_TIME = 0.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
--- UNIVERSAL_SHOP_MODE = false             -- Should the shops contain all items?
--- NORMAL_START_GOLD = 10000                 -- Starting Gold
--- ROSHAN_MINIMUM_RESPAWN = 15
--- ROSHAN_MAXIMUM_RESPAWN = 20
+USE_DEBUG = true                       -- Should we print statements on almost every function/event call? For debugging.
+ENABLE_BANNING_PHASE = false             -- Should we enable banning phase? Set to true if "EnablePickRules" is "1" in 'addoninfo.txt'
+CUSTOM_GAME_SETUP_TIME = 3.0           -- How long should custom game setup last - the screen where players pick a team?
+BANNING_PHASE_TIME = 0.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
+PRE_GAME_TIME = 3.0                    -- How long after showcase time should the horn blow and the game start?
+HERO_SELECTION_TIME = 1.0
+HERO_SELECTION_PENALTY_TIME = 0.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
+UNIVERSAL_SHOP_MODE = false             -- Should the shops contain all items?
+NORMAL_START_GOLD = 10000                 -- Starting Gold
+ROSHAN_MINIMUM_RESPAWN = 15
+ROSHAN_MAXIMUM_RESPAWN = 20
 -- END OF TESTING SETTINGS
 
 
@@ -37,8 +37,8 @@ POG_MAX_ADDITIONAL_BANS = 8
 POG_ADDITIONAL_BAN_FREQUENCY = 2
 
 -- hero selection
-DOTA_MAX_HERO_COUNT = 137
-POG_BAN_COUNT = 110
+DOTA_MAX_HERO_COUNT = 138
+POG_BAN_COUNT = 111
 POG_MAX_PLAYER_COUNT = 10
 POG_SELECTION_PENALTY_PER_TICK = -50
 POG_RANDOM_GOLD = 200
@@ -62,8 +62,8 @@ POG_4v4_SIEGE_ADDITIONAL_SPAWN = 1
 
 -- gold / experience multipliers
 POG_HERO_GOLD_MULTIPLIER = 1.15
-POG_NEUTRAL_GOLD_MULTIPLIER = 1.46
-POG_CREEP_GOLD_MULTIPLIER = 1.30
+POG_NEUTRAL_GOLD_MULTIPLIER = 1.40
+POG_CREEP_GOLD_MULTIPLIER = 1.25
 POG_CREEP_EXPERIENCE_MULTIPLIER = 1.85
 
 POG_OUTPOST_INVULNERABLE_DURATION = 300

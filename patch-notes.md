@@ -1,15 +1,8 @@
 # DOTA2v2 Patch Notes
-v2.3.2: patch
-- fix gg actually, now only works in global chat
-- creeps dont immediately upgrade to megas (a single racks will set them to upgraded now)
-- increased scaling of upgraded and megas 
-- upgraded additional damage per min -> 1
-- upgraded additional health per min -> 8
-- megas additional damage per min -> 3
-- megas additional health per min -> 30
-- shared gold decreased 66 -> 60
-- missed gold increased from 20 -> 25
-- runes spawn every 2 minutes per chickenhandlers suggestion
+v2.3.3: muerta
+- added muerta to each game pick screen
+- decrease creep gold multiplier 1.30 -> 1.25
+- decrease neutral gold multiplier 1.46 -> 1.40
 
 ## Future ideas
 - Data logging
@@ -23,6 +16,18 @@ v2.3.2: patch
 - travel boots changes
 
 ## Previous Patches
+v2.3.2: patch
+- fix gg actually, now only works in global chat
+- creeps dont immediately upgrade to megas (a single racks will set them to upgraded now)
+- increased scaling of upgraded and megas 
+- upgraded additional damage per min -> 1
+- upgraded additional health per min -> 8
+- megas additional damage per min -> 3
+- megas additional health per min -> 30
+- shared gold decreased 66 -> 60
+- missed gold increased from 20 -> 25
+- runes spawn every 2 minutes per chickenhandlers suggestion
+
 v2.3.1: fix gg
 - fix gg
 

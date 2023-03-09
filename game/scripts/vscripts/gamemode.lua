@@ -68,7 +68,10 @@ function barebones:OnAllPlayersLoaded()
 	local toBan = barebones:shuffle(heroList)
 	-- pull heroes from random list you want banned
 	for index = 1, POG_BAN_COUNT do
-		GameRules:AddHeroIDToBlacklist(toBan[index])
+		-- prevent banning muerta
+		if toBan[index] ~= 138 then
+			GameRules:AddHeroIDToBlacklist(toBan[index])
+		end
 	end	
 	-- set the rest of the heroes to the remaining pool
 	local i = 0
