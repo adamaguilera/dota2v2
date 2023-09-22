@@ -237,7 +237,7 @@ function barebones:InitGameMode()
 		if state == DOTA_GAMERULES_STATE_PRE_GAME then
 			-- pog map setup
 			barebones:setup_map()
-			barebones:replaceRoshan()
+			-- barebones:replaceRoshan()
 			barebones:SetTeamCounts()
 		end
 		if state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then

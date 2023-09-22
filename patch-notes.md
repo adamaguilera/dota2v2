@@ -1,8 +1,7 @@
 # DOTA2v2 Patch Notes
-v2.3.3: muerta
-- added muerta to each game pick screen
-- decrease creep gold multiplier 1.30 -> 1.25
-- decrease neutral gold multiplier 1.46 -> 1.40
+v3.0: 7.34 update
+- fixed issues from crashing
+- removed rosh and shrines from 3v3 and 4v4 maps
 
 ## Future ideas
 - Data logging
@@ -16,6 +15,11 @@ v2.3.3: muerta
 - travel boots changes
 
 ## Previous Patches
+v2.3.3: muerta
+- added muerta to each game pick screen
+- decrease creep gold multiplier 1.30 -> 1.25
+- decrease neutral gold multiplier 1.46 -> 1.40
+
 v2.3.2: patch
 - fix gg actually, now only works in global chat
 - creeps dont immediately upgrade to megas (a single racks will set them to upgraded now)

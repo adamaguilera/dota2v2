@@ -639,10 +639,10 @@ function barebones:OnEntityKilled(keys)
 		end
 	end
 
-	-- pog roshan
-	if killed_unit:GetUnitName() == "npc_dota_roshan" then
-		barebones:onRoshanDeath(killed_unit:GetAbsOrigin())
-	end
+	-- -- pog roshan
+	-- if killed_unit:GetUnitName() == "npc_dota_roshan" then
+	-- 	barebones:onRoshanDeath(killed_unit:GetAbsOrigin())
+	-- end
 end
 
 -- This function is called once when the player fully connects and becomes "Ready" during Loading

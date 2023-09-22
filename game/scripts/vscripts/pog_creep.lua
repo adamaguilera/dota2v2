@@ -181,60 +181,60 @@ end
 
 
 -- POG ROSHAN
-ROSHAN_DEATHS = 0
-ROSHAN_LOCATION = Vector(0, 0, 0)
-function barebones:replaceRoshan()
-	if barebones:Is3v3() or barebones:Is4v4() then
-		-- reset deaths
-		ROSHAN_DEATHS = 0
-		-- find roshan model
-		local rosh = Entities:FindByName(nil, "445_npc_1")
-		rosh:AddItem(CreateItem("item_aegis", nil, nil))
-		ROSHAN_LOCATION = rosh:GetAbsOrigin()
-		-- create new pog rosh
-		-- barebones:spawnRoshan()
-	end
-end
+-- ROSHAN_DEATHS = 0
+-- ROSHAN_LOCATION = Vector(0, 0, 0)
+-- function barebones:replaceRoshan()
+-- 	if barebones:Is3v3() or barebones:Is4v4() then
+-- 		-- reset deaths
+-- 		ROSHAN_DEATHS = 0
+-- 		-- find roshan model
+-- 		local rosh = Entities:FindByName(nil, "445_npc_1")
+-- 		rosh:AddItem(CreateItem("item_aegis", nil, nil))
+-- 		ROSHAN_LOCATION = rosh:GetAbsOrigin()
+-- 		-- create new pog rosh
+-- 		-- barebones:spawnRoshan()
+-- 	end
+-- end
 
-function barebones:spawnRoshan()
-	if barebones:Is3v3() or barebones:Is4v4() then
-		local pog_rosh = CreateUnitByName("npc_dota_roshan", ROSHAN_LOCATION, false, nil, nil, DOTA_TEAM_NEUTRALS)
-		-- give him aegis
-		Timers:CreateTimer(1, function()
-			pog_rosh:AddItem(CreateItem("item_aegis", nil, nil))
-			if ROSHAN_DEATHS >= 1 then
-				pog_rosh:AddItem(CreateItem("item_cheese", nil, nil))
-			end
-			if ROSHAN_DEATHS == 1 then
-				pog_rosh:AddItem(CreateItem("item_aghanims_shard", nil, nil))
-			end
-			if ROSHAN_DEATHS == 2 then
-				pog_rosh:AddItem(CreateItem("item_refresher_shard", nil, nil))
-				pog_rosh:AddItem(CreateItem("item_ultimate_scepter_2", nil, nil))
-			end
-		end)
-	end
-end
+-- function barebones:spawnRoshan()
+-- 	if barebones:Is3v3() or barebones:Is4v4() then
+-- 		local pog_rosh = CreateUnitByName("npc_dota_roshan", ROSHAN_LOCATION, false, nil, nil, DOTA_TEAM_NEUTRALS)
+-- 		-- give him aegis
+-- 		Timers:CreateTimer(1, function()
+-- 			pog_rosh:AddItem(CreateItem("item_aegis", nil, nil))
+-- 			if ROSHAN_DEATHS >= 1 then
+-- 				pog_rosh:AddItem(CreateItem("item_cheese", nil, nil))
+-- 			end
+-- 			if ROSHAN_DEATHS == 1 then
+-- 				pog_rosh:AddItem(CreateItem("item_aghanims_shard", nil, nil))
+-- 			end
+-- 			if ROSHAN_DEATHS == 2 then
+-- 				pog_rosh:AddItem(CreateItem("item_refresher_shard", nil, nil))
+-- 				pog_rosh:AddItem(CreateItem("item_ultimate_scepter_2", nil, nil))
+-- 			end
+-- 		end)
+-- 	end
+-- end
 
-function barebones:onRoshanDeath(deathLocation)
-	if barebones:Is3v3() or barebones:Is4v4() then
-		-- drop items
-		ROSHAN_DEATHS = ROSHAN_DEATHS + 1
-		-- CreateItemOnPositionSync(deathLocation, CreateItem("item_aegis", nil, nil))
-		-- if ROSHAN_DEATHS >= 2 then
-		-- 	CreateItemOnPositionSync(deathLocation, CreateItem("item_cheese", nil, nil))
-		-- end
-		-- if ROSHAN_DEATHS == 2 then
-		-- 	CreateItemOnPositionSync(deathLocation, CreateItem("item_aghanims_shard", nil, nil))
-		-- end
-		-- if ROSHAN_DEATHS == 3 then
-		-- 	CreateItemOnPositionSync(deathLocation, CreateItem("item_refresher_shard", nil, nil))
-		-- 	CreateItemOnPositionSync(deathLocation, CreateItem("item_ultimate_scepter_2", nil, nil))
-		-- end
-		-- create respawn of rosh
-		Timers:CreateTimer(RandomInt(ROSHAN_MINIMUM_RESPAWN, ROSHAN_MAXIMUM_RESPAWN), function()
-			barebones:spawnRoshan()
-		end)
-   end
+-- function barebones:onRoshanDeath(deathLocation)
+-- 	if barebones:Is3v3() or barebones:Is4v4() then
+-- 		-- drop items
+-- 		ROSHAN_DEATHS = ROSHAN_DEATHS + 1
+-- 		-- CreateItemOnPositionSync(deathLocation, CreateItem("item_aegis", nil, nil))
+-- 		-- if ROSHAN_DEATHS >= 2 then
+-- 		-- 	CreateItemOnPositionSync(deathLocation, CreateItem("item_cheese", nil, nil))
+-- 		-- end
+-- 		-- if ROSHAN_DEATHS == 2 then
+-- 		-- 	CreateItemOnPositionSync(deathLocation, CreateItem("item_aghanims_shard", nil, nil))
+-- 		-- end
+-- 		-- if ROSHAN_DEATHS == 3 then
+-- 		-- 	CreateItemOnPositionSync(deathLocation, CreateItem("item_refresher_shard", nil, nil))
+-- 		-- 	CreateItemOnPositionSync(deathLocation, CreateItem("item_ultimate_scepter_2", nil, nil))
+-- 		-- end
+-- 		-- create respawn of rosh
+-- 		Timers:CreateTimer(RandomInt(ROSHAN_MINIMUM_RESPAWN, ROSHAN_MAXIMUM_RESPAWN), function()
+-- 			barebones:spawnRoshan()
+-- 		end)
+--    end
 
-end
+-- end

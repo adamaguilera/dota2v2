@@ -65,4 +65,6 @@ function Activate()
 	DebugPrint("[BAREBONES] Activating ...")
 	print("Your custom game is activating.")
 	barebones:InitGameMode()
+	SpawnEntityFromTableSynchronous("world_bounds", {Min = Vector(-6400, -6400, -512), Max = Vector(6400, 6400, 1152)})
+	print("set world_bounds")
 end
